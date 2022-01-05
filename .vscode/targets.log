@@ -1,0 +1,799 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jan  5 19:17:07 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+I3SOCK = /run/user/1003/i3/ipc-socket.3781
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-698512c6-ae06-46a5-a88b-a267c155114d.sock
+# environment
+VSCODE_CWD = /home/kamil2
+# default
+MAKE_COMMAND := make
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/kamil2/Projects/Vision
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/spool/mail/kamil2
+# environment
+OLDPWD = /home/kamil2
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/kamil2/.config/Code - OSS/CachedData/b3318bc0524af3d74034b8bb8a64df0ccf35549a
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/kamil2/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/kamil2/Projects/Vision
+# makefile (from 'Makefile', line 7)
+DEPENDS = ${OBJECTS:.o=.d} main.d
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = i3
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"Code - OSS","submitURL":"","uploadToServer":false}
+# makefile (from 'main.d', line 1)
+MAKEFILE_LIST := Makefile ExecutionQueue.d Scanner.d ScannerManager.d ScannerOption.d main.d main.d
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 66006
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-oss.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1003/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+BREAKPAD_DUMP_LOCATION = /home/kamil2/.config/Code - OSS/exthost Crash Reports
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/go/bin
+# default
+MAKEFILES := 
+# environment
+MOTD_SHOWN = pam
+# automatic
+^F = $(notdir $^)
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_SEAT = seat0
+# environment
+XDG_CURRENT_DESKTOP = i3
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = i3
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = i3
+# makefile (from 'Makefile', line 2)
+OBJECTS := ExecutionQueue.o Scanner.o ScannerManager.o ScannerOption.o main.o
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = kamil2
+# environment
+XDG_VTNR = 1
+# makefile
+.DEFAULT_GOAL := Vision
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = kamil2
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# 'override' directive (from 'Makefile', line 6)
+LDFLAGS = /home/kamil2/Libraries/uSockets/*.o -lz  -lsane
+# environment
+_ = /usr/bin/make
+# environment
+XDG_RUNTIME_DIR = /run/user/1003
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/kamil2
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1003/vscode-b3071441-1.62.0-main.sock
+# environment
+XDG_SESSION_ID = 2
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 3)
+TARGET := Vision
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# makefile (from 'Makefile', line 5)
+CXXFLAGS = -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from 'Makefile', line 4)
+CXX = g++
+# makefile (from 'Makefile', line 1)
+SOURCES := ExecutionQueue.cpp Scanner.cpp ScannerManager.cpp ScannerOption.cpp main.cpp 
+# variable set hash-table stats:
+# Load=93/1024=9%, Rehash=0, Collisions=4/144=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2065, inode 23618226): 29 files, no impossibilities.
+
+# 29 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Vision: ExecutionQueue.o Scanner.o ScannerManager.o ScannerOption.o main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
+	g++ -g -std=c++20 ${LDFLAGS} ${OBJECTS}  -o ${TARGET} 
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ExecutionQueue.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 01:31:07.023397412
+#  File has been updated.
+#  Successfully updated.
+
+ExecutionQueue.o: ExecutionQueue.cpp ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocket.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketHandshake.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpContext.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/QueryParser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerManager.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketProtocol.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/PerMessageDeflate.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Scanner.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/TopicTree.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketContext.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-03 20:03:23.247651958
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketContextData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpContextData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Scanner.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/AsyncSocketData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	rm -f *.o
+	rm -f */*.o
+	rm -f *.d
+	rm -f */*.d
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/ProxyParser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ScannerManager.o: ScannerManager.cpp ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ExecutionQueue.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/AsyncSocket.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ 
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uSockets/src/libusockets.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Scanner.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 01:29:52.995807153
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerOption.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpResponse.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/Loop.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/App.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpResponseData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main.o: main.cpp /home/kamil2/Libraries/uWebSockets/src/App.h /home/kamil2/Libraries/uWebSockets/src/HttpContext.h /home/kamil2/Libraries/uWebSockets/src/Loop.h /home/kamil2/Libraries/uWebSockets/src/LoopData.h /home/kamil2/Libraries/uWebSockets/src/PerMessageDeflate.h /home/kamil2/Libraries/uWebSockets/src/MoveOnlyFunction.h /home/kamil2/Libraries/uSockets/src/libusockets.h /home/kamil2/Libraries/uWebSockets/src/HttpContextData.h /home/kamil2/Libraries/uWebSockets/src/HttpRouter.h /home/kamil2/Libraries/uWebSockets/src/HttpResponseData.h /home/kamil2/Libraries/uWebSockets/src/HttpParser.h /home/kamil2/Libraries/uWebSockets/src/BloomFilter.h /home/kamil2/Libraries/uWebSockets/src/ProxyParser.h /home/kamil2/Libraries/uWebSockets/src/QueryParser.h /home/kamil2/Libraries/uWebSockets/src/AsyncSocketData.h /home/kamil2/Libraries/uWebSockets/src/AsyncSocket.h /home/kamil2/Libraries/uWebSockets/src/WebSocketData.h /home/kamil2/Libraries/uWebSockets/src/WebSocketProtocol.h /home/kamil2/Libraries/uWebSockets/src/TopicTree.h /home/kamil2/Libraries/uWebSockets/src/HttpResponse.h /home/kamil2/Libraries/uWebSockets/src/Utilities.h /home/kamil2/Libraries/uWebSockets/src/WebSocketExtensions.h /home/kamil2/Libraries/uWebSockets/src/WebSocketHandshake.h /home/kamil2/Libraries/uWebSockets/src/WebSocket.h /home/kamil2/Libraries/uWebSockets/src/WebSocketContextData.h /home/kamil2/Libraries/uWebSockets/src/WebSocketContext.h ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp main.cpp /home/kamil2/Libraries/uWebSockets/src/App.h /home/kamil2/Libraries/uWebSockets/src/HttpContext.h /home/kamil2/Libraries/uWebSockets/src/Loop.h /home/kamil2/Libraries/uWebSockets/src/LoopData.h /home/kamil2/Libraries/uWebSockets/src/PerMessageDeflate.h /home/kamil2/Libraries/uWebSockets/src/MoveOnlyFunction.h /home/kamil2/Libraries/uSockets/src/libusockets.h /home/kamil2/Libraries/uWebSockets/src/HttpContextData.h /home/kamil2/Libraries/uWebSockets/src/HttpRouter.h /home/kamil2/Libraries/uWebSockets/src/HttpResponseData.h /home/kamil2/Libraries/uWebSockets/src/HttpParser.h /home/kamil2/Libraries/uWebSockets/src/BloomFilter.h /home/kamil2/Libraries/uWebSockets/src/ProxyParser.h /home/kamil2/Libraries/uWebSockets/src/QueryParser.h /home/kamil2/Libraries/uWebSockets/src/AsyncSocketData.h /home/kamil2/Libraries/uWebSockets/src/AsyncSocket.h /home/kamil2/Libraries/uWebSockets/src/WebSocketData.h /home/kamil2/Libraries/uWebSockets/src/WebSocketProtocol.h /home/kamil2/Libraries/uWebSockets/src/TopicTree.h /home/kamil2/Libraries/uWebSockets/src/HttpResponse.h /home/kamil2/Libraries/uWebSockets/src/Utilities.h /home/kamil2/Libraries/uWebSockets/src/WebSocketExtensions.h /home/kamil2/Libraries/uWebSockets/src/WebSocketHandshake.h /home/kamil2/Libraries/uWebSockets/src/WebSocket.h /home/kamil2/Libraries/uWebSockets/src/WebSocketContextData.h /home/kamil2/Libraries/uWebSockets/src/WebSocketContext.h ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerOption.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 01:09:44.935982187
+#  File has been updated.
+#  Successfully updated.
+
+Scanner.o: Scanner.cpp Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/MoveOnlyFunction.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/WebSocketExtensions.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 01:28:31.731576469
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/LoopData.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/backends/include/sane/sane.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/BloomFilter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerManager.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-05 01:29:55.525835091
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerOption.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/json.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ExecutionQueue.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ScannerManager.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpParser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/HttpRouter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/uWebSockets/src/Utilities.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+
+ScannerOption.o: ScannerOption.cpp ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp /home/kamil2/Libraries/backends/include/sane/sane.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=93/1024=9%, Rehash=0, Collisions=8/448=2%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 103 / storage = 4847 B / avg = 47 B
+# current buf: size = 8162 B / used = 4847 B / count = 103 / avg = 47 B
+
+# strcache performance: lookups = 399 / hit rate = 74%
+# hash-table stats:
+# Load=103/8192=1%, Rehash=0, Collisions=2/399=1%
+# Finished Make data base on Wed Jan  5 19:17:07 2022
+
+ 

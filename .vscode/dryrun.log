@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/kamil2/Projects/Vision'
+ 
+g++ -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include   -c -o ExecutionQueue.o ExecutionQueue.cpp
+g++ -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include   -c -o Scanner.o Scanner.cpp
+g++ -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include   -c -o ScannerManager.o ScannerManager.cpp
+g++ -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include   -c -o ScannerOption.o ScannerOption.cpp
+g++ -g -Wall -Werror -std=c++20 -MMD -I ./ -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include   -c -o main.o main.cpp
+g++ -g -std=c++20 /home/kamil2/Libraries/uSockets/*.o -lz  -lsane ExecutionQueue.o Scanner.o ScannerManager.o ScannerOption.o main.o  -o Vision 
+make: Leaving directory '/home/kamil2/Projects/Vision'
+ 
