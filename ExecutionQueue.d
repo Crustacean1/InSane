@@ -40,4 +40,5 @@ ExecutionQueue.o: ExecutionQueue.cpp ExecutionQueue.h Scanner.h \
  /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp \
  /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp \
  /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp \
- /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+ /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+ Image.h

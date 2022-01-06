@@ -9,25 +9,28 @@
 
 class ExecutionQueue{
 
-    std::queue<std::function<void()>> _stack;
-    std::string _auth;
-    uint32_t _authTimeout;
+    //std::queue<std::function<void()>> _stack;
+    //std::string _auth;
+    //uint32_t _authTimeout;
 
-    SANE_String_Const _scannerName;
-    std::shared_ptr<Scanner> _scanner;
+    const std::string _scannerName;
 
-    
+    std::shared_ptr<std::pair<Scanner> _scanner;
+    nlohmann::json _scannerOptions;
+
+    nlohmann::json authenticate();
+    nlohmann::json scan(std::string filpath = "/tmp/scan01.png");
+    nlohmann::json setOption(uint32_t options,std::string t);
+    nlohmann::json getOptionsInJson();
+    nlohmann::json getProgressInJson();
+
+    friend int main(int,char**);
 
     public:
 
     ExecutionQueue(SANE_String_Const name);
+    std::tuple<nlohmann::json,size_t> execute(nlohmann::json request); //Immediate return is granteed
 
-    std::string authenticate();
-
-    void scan(std::string filpath = "/tmp/scan01.png");
-    void setOption(uint32_t options,std::string t);
-    std::string getOptionsInJson();
-    std::string getProgressInJson();
 };
 
 #endif /*EXECUTION_QUEUE*/

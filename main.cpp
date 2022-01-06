@@ -1,5 +1,5 @@
 #include <iostream>
-#include <App.h>
+//#include <App.h>
 #include "ScannerManager.h"
 
 int main(int argc, char ** argv)
@@ -37,17 +37,22 @@ int main(int argc, char ** argv)
     try{
 
     ScannerManager manager;
-    //manager.refreshDeviceList();
-    auto scanner = manager.getScanner("v4l:/dev/video0");
-    std::cout<<scanner->getOptionsInJson()<<std::endl;
-    scanner->setOption(2,"Color");
-    std::cout<<scanner->getOptionsInJson()<<std::endl;
-    scanner->scan();
-    //manager._scanners[0].scan();
+    //manager.refreshDeviceList(); Can be used to find devices, but takes some time
+
+    auto scanner = manager.getScanner("net:192.168.1.9:hpaio:/usb/HP_LaserJet_Pro_MFP_M125a?serial=CNB6H9PBMM");
+
+    scanner->setOption(2,std::string("Color"));
+    scanner->setOption(3,std::string("100"));
+    scanner->setOption(8,std::string("None"));
+
+    std::cout<<scanner->getOptionsInJson().dump()<<std::endl;
+    if(argc<2){
+        return 0;
+    }
+    scanner->scan(std::string(argv[1]));
 
     }catch(std::runtime_error &e){
         std::cerr<<e.what()<<std::endl;
         return -1;
     }
-
 }

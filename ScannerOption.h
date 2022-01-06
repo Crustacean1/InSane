@@ -46,7 +46,7 @@ class ScannerOption{
 
     nlohmann::json serialize() const;
 
-    void setOption(std::string param);
+    SANE_Word setOption(std::string param);
 
 };
 

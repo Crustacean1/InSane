@@ -1,30 +1,4 @@
-main.o: main.cpp /home/kamil2/Libraries/uWebSockets/src/App.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpContext.h \
- /home/kamil2/Libraries/uWebSockets/src/Loop.h \
- /home/kamil2/Libraries/uWebSockets/src/LoopData.h \
- /home/kamil2/Libraries/uWebSockets/src/PerMessageDeflate.h \
- /home/kamil2/Libraries/uWebSockets/src/MoveOnlyFunction.h \
- /home/kamil2/Libraries/uSockets/src/libusockets.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpContextData.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpRouter.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpResponseData.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpParser.h \
- /home/kamil2/Libraries/uWebSockets/src/BloomFilter.h \
- /home/kamil2/Libraries/uWebSockets/src/ProxyParser.h \
- /home/kamil2/Libraries/uWebSockets/src/QueryParser.h \
- /home/kamil2/Libraries/uWebSockets/src/AsyncSocketData.h \
- /home/kamil2/Libraries/uWebSockets/src/AsyncSocket.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketData.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketProtocol.h \
- /home/kamil2/Libraries/uWebSockets/src/TopicTree.h \
- /home/kamil2/Libraries/uWebSockets/src/HttpResponse.h \
- /home/kamil2/Libraries/uWebSockets/src/Utilities.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketExtensions.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketHandshake.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocket.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketContextData.h \
- /home/kamil2/Libraries/uWebSockets/src/WebSocketContext.h \
- ScannerManager.h ExecutionQueue.h Scanner.h \
+main.o: main.cpp ScannerManager.h ExecutionQueue.h Scanner.h \
  /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h \
  /home/kamil2/Libraries/json/include/nlohmann/json.hpp \
  /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp \
