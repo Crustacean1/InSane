@@ -85,19 +85,19 @@ json ScannerOption::serialize()const{
 
 SANE_Word ScannerOption::setOption(std::string val){
     SANE_Word word = 0;
-    SANE_Word details;
+    SANE_Int details;
     
     switch(_desc->type){
         case SANE_TYPE_BOOL:
         case SANE_TYPE_INT:
             word = std::atoi(val.c_str());
-            if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,&word,&details); status != SANE_STATUS_GOOD){
+            if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,&word,&details);status != SANE_STATUS_GOOD){
                 throw std::runtime_error("Couldn't set option to value: "+ val + " error: "+sane_strstatus(status));
             }
             break;
         case SANE_TYPE_FIXED: 
             word = floatToFixed(std::atof(val.c_str()));
-            if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,&word,&details);status != SANE_STATUS_GOOD){
+            if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,&word,NULL);status != SANE_STATUS_GOOD){
                 throw std::runtime_error("Couldn't set option to value: "+ val + " error: "+sane_strstatus(status));
             }
             break;
@@ -105,7 +105,7 @@ SANE_Word ScannerOption::setOption(std::string val){
             {
                 char * buffer = new char[_desc->size];
                 memcpy(buffer,val.c_str(),_desc->size);
-                if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,buffer,&details); status != SANE_STATUS_GOOD){
+                if(auto status = sane_control_option(_handle,_optionNo,SANE_ACTION_SET_VALUE,buffer,NULL); status != SANE_STATUS_GOOD){
                     throw std::runtime_error("Couldn't set option to value: "+ val + " error: "+sane_strstatus(status));
                 }
                 delete[] buffer;
@@ -114,5 +114,5 @@ SANE_Word ScannerOption::setOption(std::string val){
         default:
             break;
     }
-    return details;
+    return 0;
 }

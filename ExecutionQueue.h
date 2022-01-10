@@ -15,8 +15,10 @@ class ExecutionQueue{
 
     const std::string _scannerName;
 
-    std::shared_ptr<std::pair<Scanner> _scanner;
+    std::shared_ptr<Scanner> _scanner;
     nlohmann::json _scannerOptions;
+
+    void refreshJsonOptions();
 
     nlohmann::json authenticate();
     nlohmann::json scan(std::string filpath = "/tmp/scan01.png");
@@ -29,6 +31,8 @@ class ExecutionQueue{
     public:
 
     ExecutionQueue(SANE_String_Const name);
+
+    std::string getName();
     std::tuple<nlohmann::json,size_t> execute(nlohmann::json request); //Immediate return is granteed
 
 };

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jan  6 14:37:13 2022
+# Make data base, printed on Sun Jan  9 13:24:24 2022
 
 # Variables
 
@@ -19,9 +19,9 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-I3SOCK = /run/user/1003/i3/ipc-socket.3768
+I3SOCK = /run/user/1003/i3/ipc-socket.3771
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-0e413503-84ab-48e2-93ee-76414e7cd80d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-65af79a9-9a40-4a21-85b6-52f905ff8aab.sock
 # environment
 VSCODE_CWD = /home/kamil2
 # default
@@ -33,7 +33,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/kamil2/Projects/Vision
+PWD = /home/kamil2/Projects/Vision/Backend
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -61,7 +61,7 @@ XAUTHORITY = /home/kamil2/.Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/kamil2/Projects/Vision
+CURDIR := /home/kamil2/Projects/Vision/Backend
 # makefile (from 'Makefile', line 13)
 DEPENDS = ${OBJECTS:.o=.d} main.d
 # environment
@@ -81,13 +81,13 @@ XDG_SESSION_DESKTOP = i3
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"Code - OSS","submitURL":"","uploadToServer":false}
 # makefile (from 'main.d', line 1)
-MAKEFILE_LIST := Makefile ExecutionQueue.d Image.d Scanner.d ScannerManager.d ScannerOption.d main.d main.d
+MAKEFILE_LIST := Makefile ExecutionQueue.d HttpListener.d HttpProcessor.d HttpSession.d Image.d Scanner.d ScannerManager.d ScannerOption.d main.d main.d
 # automatic
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3959
+VSCODE_PID = 130987
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -111,13 +111,15 @@ SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/kamil2/.cache/dotnet_bundle_extract
+# environment
 SHLVL = 0
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/go/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/home/kamil2/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/go/bin
 # default
 MAKEFILES := 
 # environment
@@ -143,7 +145,7 @@ DESKTOP_SESSION = i3
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = i3
 # makefile (from 'Makefile', line 2)
-OBJECTS := ExecutionQueue.o Image.o Scanner.o ScannerManager.o ScannerOption.o main.o
+OBJECTS := ExecutionQueue.o HttpListener.o HttpProcessor.o HttpSession.o Image.o Scanner.o ScannerManager.o ScannerOption.o main.o
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -151,7 +153,7 @@ LOGNAME = kamil2
 # environment
 XDG_VTNR = 1
 # makefile
-.DEFAULT_GOAL := Vision
+.DEFAULT_GOAL := Backend
 # environment
 DISPLAY = :0
 # environment
@@ -163,7 +165,7 @@ MAKE_VERSION := 4.3
 # 'override' directive
 .SHELLSTATUS := 0
 # 'override' directive (from 'Makefile', line 12)
-LDFLAGS = /home/kamil2/Libraries/uSockets/*.o -lsane -lz -L/home/kamil2/Libraries/ImageMagic/Magick++/lib/.libs/ -lMagick++-7.Q16HDRI
+LDFLAGS = /home/kamil2/Libraries/uSockets/*.o -lsane -lz -L/home/kamil2/Libraries/ImageMagic/Magick++/lib/.libs/ -lMagick++-7.Q16HDRI -lpthread
 # environment
 _ = /usr/bin/make
 # environment
@@ -187,7 +189,7 @@ XDG_SESSION_ID = 2
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 3)
-TARGET := Vision
+TARGET := Backend
 # environment
 VSCODE_CLI = 1
 # environment
@@ -199,9 +201,11 @@ CXXFLAGS = -g -Wall  -std=c++20 -MMD ${IDIRS}
 # makefile (from 'Makefile', line 10)
 CXX = g++
 # makefile (from 'Makefile', line 1)
-SOURCES := ExecutionQueue.cpp Image.cpp Scanner.cpp ScannerManager.cpp ScannerOption.cpp main.cpp 
+SOURCES := ExecutionQueue.cpp HttpListener.cpp HttpProcessor.cpp HttpSession.cpp Image.cpp Scanner.cpp ScannerManager.cpp ScannerOption.cpp main.cpp 
+# environment
+DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=4/147=3%
+# Load=96/1024=9%, Rehash=0, Collisions=4/155=3%
 
 # Pattern-specific Variable Values
 
@@ -209,9 +213,9 @@ SOURCES := ExecutionQueue.cpp Image.cpp Scanner.cpp ScannerManager.cpp ScannerOp
 
 # Directories
 
-# . (device 2065, inode 23618226): 35 files, no impossibilities.
+# . (device 2065, inode 23618226): 52 files, no impossibilities.
 
-# 35 files, no impossibilities in 1 directories.
+# 52 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -230,13 +234,6 @@ SOURCES := ExecutionQueue.cpp Image.cpp Scanner.cpp ScannerManager.cpp ScannerOp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-Vision: ExecutionQueue.o Image.o Scanner.o ScannerManager.o ScannerOption.o main.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
-	g++ -g -std=c++20 ${LDFLAGS} ${OBJECTS}  -o ${TARGET} 
 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp:
@@ -280,13 +277,21 @@ Vision: ExecutionQueue.o Image.o Scanner.o ScannerManager.o ScannerOption.o main
 #  Modification time never checked.
 #  File has not been updated.
 
+Backend: ExecutionQueue.o HttpListener.o HttpProcessor.o HttpSession.o Image.o Scanner.o ScannerManager.o ScannerOption.o main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	g++ -g -std=c++20 ${LDFLAGS} ${OBJECTS}  -o ${TARGET} 
+
 # Not a target:
+ 
 /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp:
 #  Implicit rule search has not been done.
@@ -308,12 +313,13 @@ Vision: ExecutionQueue.o Image.o Scanner.o ScannerManager.o ScannerOption.o main
 # Not a target:
 ExecutionQueue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 14:32:52.15484297
+#  Last modified 2022-01-09 01:08:23.236100095
 #  File has been updated.
 #  Successfully updated.
 
 ExecutionQueue.o: ExecutionQueue.cpp ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp Image.h
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -377,7 +383,6 @@ ExecutionQueue.o: ExecutionQueue.cpp ExecutionQueue.h Scanner.h /home/kamil2/Lib
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp:
 #  Implicit rule search has not been done.
@@ -434,6 +439,7 @@ ExecutionQueue.o: ExecutionQueue.cpp ExecutionQueue.h Scanner.h /home/kamil2/Lib
 
 # Not a target:
 ScannerManager.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -448,8 +454,14 @@ ScannerManager.h:
 /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
+
+# Not a target:
+HttpSession.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-09 01:08:27.10614023
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h:
@@ -507,7 +519,6 @@ Scanner.h:
 
 # Not a target:
 Image.cpp:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -531,6 +542,7 @@ Image.cpp:
 #  File has not been updated.
 
 # Not a target:
+ 
 /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -545,7 +557,7 @@ Image.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 13:44:48.380343626
+#  Last modified 2022-01-07 21:26:22.825108366
 #  File has been updated.
 #  Successfully updated.
 
@@ -564,6 +576,7 @@ Makefile:
 # Not a target:
 Image.h:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -575,7 +588,6 @@ Image.h:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -599,6 +611,13 @@ Image.h:
 #  File has not been updated.
 
 # Not a target:
+HttpProcessor.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-09 01:08:27.08947339
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -610,7 +629,6 @@ Scanner.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/module.h:
 #  Implicit rule search has not been done.
@@ -642,6 +660,12 @@ Scanner.cpp:
 #  File has not been updated.
 
 # Not a target:
+HttpListener.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -652,6 +676,7 @@ Scanner.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h:
@@ -673,7 +698,6 @@ clean:
 	rm -f *.o
 	rm -f */*.o
 	rm -f *.d
- 
 	rm -f */*.d
 
 # Not a target:
@@ -733,7 +757,6 @@ clean:
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -751,6 +774,7 @@ clean:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -786,7 +810,6 @@ clean:
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -794,6 +817,11 @@ clean:
 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+HttpListener.o: HttpListener.cpp HttpListener.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -819,7 +847,6 @@ ScannerManager.o: ScannerManager.cpp ScannerManager.h ExecutionQueue.h Scanner.h
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -852,6 +879,7 @@ ExecutionQueue.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp:
 #  Implicit rule search has not been done.
@@ -859,7 +887,6 @@ ExecutionQueue.h:
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -874,7 +901,7 @@ ExecutionQueue.h:
 # Not a target:
 Scanner.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 14:34:56.296176633
+#  Last modified 2022-01-09 01:08:32.84286639
 #  File has been updated.
 #  Successfully updated.
 
@@ -888,7 +915,6 @@ Scanner.d:
 /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -898,9 +924,15 @@ Scanner.d:
 #  File has not been updated.
 
 # Not a target:
+HttpListener.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Image.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 14:34:53.349478312
+#  Last modified 2022-01-09 01:08:28.132817544
 #  File has been updated.
 #  Successfully updated.
 
@@ -912,7 +944,6 @@ Image.d:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -929,6 +960,7 @@ Image.d:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 ScannerOption.h:
 #  Implicit rule search has not been done.
@@ -942,7 +974,6 @@ ScannerOption.h:
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -965,7 +996,6 @@ ScannerOption.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h:
@@ -986,7 +1016,6 @@ ScannerOption.h:
 #  File has not been updated.
 
 # Not a target:
- 
 all:
 #  Command line target.
 #  Implicit rule search has been done.
@@ -1035,7 +1064,6 @@ all:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 main.cpp:
@@ -1067,7 +1095,6 @@ main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h:
 #  Implicit rule search has not been done.
@@ -1082,12 +1109,12 @@ main.cpp:
 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
- 
-main.o: main.cpp ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp main.cpp ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerOption.h /home/kamil2/Libraries/json/include/nlohmann/json.hpp /home/kamil2/Libraries/json/include/nlohmann/adl_serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/from_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/exceptions.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/value_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_scope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/detected.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/void_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/position_t.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/cpp_future.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/identity_tag.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/type_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iterator_traits.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/begin.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/call_std/end.hpp /home/kamil2/Libraries/json/include/nlohmann/json_fwd.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_json.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iteration_proxy.hpp /home/kamil2/Libraries/json/include/nlohmann/byte_container_with_subtype.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/hash.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/binary_reader.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/input_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/json_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/lexer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/meta/is_sax.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/input/parser.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/internal_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/primitive_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/iter_impl.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_pointer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/json_ref.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/binary_writer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/output_adapters.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/conversions/to_chars.hpp /home/kamil2/Libraries/json/include/nlohmann/ordered_map.hpp /home/kamil2/Libraries/json/include/nlohmann/detail/macro_unscope.hpp /home/kamil2/Libraries/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+main.o: main.cpp HttpListener.h main.cpp HttpListener.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1110,11 +1137,15 @@ main.o: main.cpp ScannerManager.h ExecutionQueue.h Scanner.h /home/kamil2/Librar
 #  Modification time never checked.
 #  File has not been updated.
 
+HttpSession.o: HttpSession.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 ScannerOption.d:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-01-06 12:58:37.690213953
+#  Last modified 2022-01-09 01:08:38.489591618
 #  File has been updated.
 #  Successfully updated.
 
@@ -1145,7 +1176,6 @@ Scanner.o: Scanner.cpp Scanner.h /home/kamil2/Libraries/backends/include/sane/sa
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -1159,6 +1189,14 @@ Scanner.o: Scanner.cpp Scanner.h /home/kamil2/Libraries/backends/include/sane/sa
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+ 
+# Not a target:
+HttpListener.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-09 01:40:29.891363123
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h:
@@ -1191,7 +1229,6 @@ Scanner.o: Scanner.cpp Scanner.h /home/kamil2/Libraries/backends/include/sane/sa
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/ImageMagick/MagickWand/import.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1212,7 +1249,7 @@ Scanner.o: Scanner.cpp Scanner.h /home/kamil2/Libraries/backends/include/sane/sa
 # Not a target:
 main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 14:32:55.351543979
+#  Last modified 2022-01-09 01:40:32.768057367
 #  File has been updated.
 #  Successfully updated.
 
@@ -1230,7 +1267,6 @@ main.d:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1238,11 +1274,17 @@ main.d:
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/detail/output/serializer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+HttpProcessor.o: HttpProcessor.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1268,12 +1310,11 @@ main.d:
 # Not a target:
 ScannerManager.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-06 14:33:34.96863625
+#  Last modified 2022-01-09 01:08:35.712896155
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/json/include/nlohmann/detail/string_escape.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1310,6 +1351,7 @@ ScannerOption.cpp:
 #  File has not been updated.
 
 # Not a target:
+ 
 /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1344,7 +1386,6 @@ ScannerOption.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 /home/kamil2/Libraries/json/include/nlohmann/json.hpp:
@@ -1376,6 +1417,13 @@ ExecutionQueue.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+HttpProcessor.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
 Image.o: Image.cpp Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Include.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-baseconfig.h /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h /home/kamil2/Libraries/ImageMagick/MagickCore/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-type.h /home/kamil2/Libraries/ImageMagick/MagickCore/animate.h /home/kamil2/Libraries/ImageMagick/MagickCore/annotate.h /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h /home/kamil2/Libraries/ImageMagick/MagickCore/geometry.h /home/kamil2/Libraries/ImageMagick/MagickCore/image.h /home/kamil2/Libraries/ImageMagick/MagickCore/blob.h /home/kamil2/Libraries/ImageMagick/MagickCore/stream.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h /home/kamil2/Libraries/ImageMagick/MagickCore/colorspace.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/color.h /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h /home/kamil2/Libraries/ImageMagick/MagickCore/semaphore.h /home/kamil2/Libraries/ImageMagick/MagickCore/composite.h /home/kamil2/Libraries/ImageMagick/MagickCore/compress.h /home/kamil2/Libraries/ImageMagick/MagickCore/effect.h /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h /home/kamil2/Libraries/ImageMagick/MagickCore/layer.h /home/kamil2/Libraries/ImageMagick/MagickCore/locale_.h /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h /home/kamil2/Libraries/ImageMagick/MagickCore/monitor.h /home/kamil2/Libraries/ImageMagick/MagickCore/profile.h /home/kamil2/Libraries/ImageMagick/MagickCore/string_.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantum.h /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h /home/kamil2/Libraries/ImageMagick/MagickCore/resize.h /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h /home/kamil2/Libraries/ImageMagick/MagickCore/type.h /home/kamil2/Libraries/ImageMagick/MagickCore/artifact.h /home/kamil2/Libraries/ImageMagick/MagickCore/attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/channel.h /home/kamil2/Libraries/ImageMagick/MagickCore/cipher.h /home/kamil2/Libraries/ImageMagick/MagickCore/client.h /home/kamil2/Libraries/ImageMagick/MagickCore/coder.h /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h /home/kamil2/Libraries/ImageMagick/MagickCore/configure.h /home/kamil2/Libraries/ImageMagick/MagickCore/constitute.h /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h /home/kamil2/Libraries/ImageMagick/MagickCore/delegate.h /home/kamil2/Libraries/ImageMagick/MagickCore/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h /home/kamil2/Libraries/ImageMagick/MagickCore/display.h /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h /home/kamil2/Libraries/ImageMagick/MagickCore/distribute-cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h /home/kamil2/Libraries/ImageMagick/MagickCore/fx.h /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h /home/kamil2/Libraries/ImageMagick/MagickCore/random_.h /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h /home/kamil2/Libraries/ImageMagick/MagickCore/identify.h /home/kamil2/Libraries/ImageMagick/MagickCore/image-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/list.h /home/kamil2/Libraries/ImageMagick/MagickCore/log.h /home/kamil2/Libraries/ImageMagick/MagickCore/magic.h /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h /home/kamil2/Libraries/ImageMagick/MagickCore/memory_.h /home/kamil2/Libraries/ImageMagick/MagickCore/module.h /home/kamil2/Libraries/ImageMagick/MagickCore/version.h /home/kamil2/Libraries/ImageMagick/MagickCore/mime.h /home/kamil2/Libraries/ImageMagick/MagickCore/montage.h /home/kamil2/Libraries/ImageMagick/MagickCore/opencl.h /home/kamil2/Libraries/ImageMagick/MagickCore/option.h /home/kamil2/Libraries/ImageMagick/MagickCore/paint.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h /home/kamil2/Libraries/ImageMagick/MagickCore/policy.h /home/kamil2/Libraries/ImageMagick/MagickCore/prepress.h /home/kamil2/Libraries/ImageMagick/MagickCore/property.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantize.h /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h /home/kamil2/Libraries/ImageMagick/MagickCore/shear.h /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h /home/kamil2/Libraries/ImageMagick/MagickCore/splay-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/static.h /home/kamil2/Libraries/ImageMagick/MagickCore/statistic.h /home/kamil2/Libraries/ImageMagick/MagickCore/token.h /home/kamil2/Libraries/ImageMagick/MagickCore/transform.h /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h /home/kamil2/Libraries/ImageMagick/MagickCore/vision.h /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/xwindow.h /home/kamil2/Libraries/ImageMagick/MagickWand/MagickWand.h /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h /home/kamil2/Libraries/ImageMagick/MagickWand/compare.h /home/kamil2/Libraries/ImageMagick/MagickWand/composite.h /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/display.h /home/kamil2/Libraries/ImageMagick/MagickWand/drawing-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h /home/kamil2/Libraries/ImageMagick/MagickWand/import.h /home/kamil2/Libraries/ImageMagick/MagickWand/wandcli.h /home/kamil2/Libraries/ImageMagick/MagickWand/operation.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-image.h /home/kamil2/Libraries/ImageMagick/MagickWand/mogrify.h /home/kamil2/Libraries/ImageMagick/MagickWand/montage.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-iterator.h /home/kamil2/Libraries/ImageMagick/MagickWand/stream.h /home/kamil2/Libraries/ImageMagick/MagickWand/wand-view.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Functions.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Blob.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Exception.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/TypeMetric.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Pixels.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/ResourceLimits.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/STL.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1400,7 +1448,12 @@ Image.o: Image.cpp Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magic
 #  File has not been updated.
 
 # Not a target:
- 
+HttpSession.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 ScannerManager.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1436,6 +1489,7 @@ ScannerManager.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h:
 #  Implicit rule search has not been done.
@@ -1466,22 +1520,21 @@ ScannerOption.o: ScannerOption.cpp ScannerOption.h /home/kamil2/Libraries/json/i
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=203/1024=20%, Rehash=0, Collisions=55/644=9%
+# Load=213/1024=21%, Rehash=0, Collisions=60/577=10%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 2 (1) / strings = 215 / storage = 11159 B / avg = 51 B
-# current buf: size = 8162 B / used = 3031 B / count = 51 / avg = 59 B
-# other used: total = 8128 B / count = 164 / avg = 49 B
- 
-# other free: total = 34 B / max = 34 B / min = 34 B / avg = 34 B
+# strcache buffers: 2 (1) / strings = 232 / storage = 11405 B / avg = 49 B
+# current buf: size = 8162 B / used = 3259 B / count = 55 / avg = 59 B
+# other used: total = 8146 B / count = 177 / avg = 46 B
+# other free: total = 16 B / max = 16 B / min = 16 B / avg = 16 B
 
-# strcache performance: lookups = 493 / hit rate = 56%
+# strcache performance: lookups = 439 / hit rate = 47%
 # hash-table stats:
-# Load=215/8192=3%, Rehash=0, Collisions=3/493=1%
-# Finished Make data base on Thu Jan  6 14:37:13 2022
+# Load=232/8192=3%, Rehash=0, Collisions=3/439=1%
+# Finished Make data base on Sun Jan  9 13:24:24 2022
 
  

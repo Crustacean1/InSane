@@ -7,6 +7,7 @@
 #include <exception>
 #include <memory>
 #include <iostream>
+#include <nlohmann/json.hpp>
 
 class ScannerManager{
     std::map<std::string,std::shared_ptr<ExecutionQueue>> _scanners;
@@ -14,9 +15,10 @@ class ScannerManager{
     
     ScannerManager();
     void refreshDeviceList();
-    std::string getScannerOptionsInJson(std::string scannerName);
+    nlohmann::json getScannerOptionsInJson(std::string scannerName);
+    nlohmann::json getScannerListInJson();
+
     std::shared_ptr<ExecutionQueue> getScanner(std::string scannerName);
-    void scan(std::string scannerName);
 
     ~ScannerManager();
 };

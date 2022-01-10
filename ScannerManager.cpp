@@ -23,7 +23,6 @@ void ScannerManager::refreshDeviceList(){
         }
     }
     _scanners = std::move(newScanners);
-    std::cout<<"_scanners size: "<<_scanners.size()<<std::endl;
 }
 std::shared_ptr<ExecutionQueue> ScannerManager::getScanner(std::string scannerName){
     if(_scanners.find(scannerName) == _scanners.end()){
@@ -38,6 +37,13 @@ std::shared_ptr<ExecutionQueue> ScannerManager::getScanner(std::string scannerNa
     }
     std::cout<<"buffered access"<<std::endl;
     return _scanners[scannerName];
+}
+nlohmann::json ScannerManager::getScannerListInJson(){
+    nlohmann::json scannerList = nlohmann::json::array();
+    for(const auto  & [name,scanner] : _scanners){
+        scannerList.push_back(name);
+    }
+    return scannerList;
 }
 
 ScannerManager::~ScannerManager(){

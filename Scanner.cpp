@@ -24,9 +24,7 @@ void Scanner::setOption(size_t option,std::string val){
         throw std::runtime_error("Option access out of bounds");
     }
     auto resp = _options[option].setOption(val);
-    if(resp == -1){
-        throw std::runtime_error("Failed to set option");
-    }else if(resp & SANE_INFO_RELOAD_OPTIONS){
+    if(resp & SANE_INFO_RELOAD_OPTIONS){
         reloadOptions();
     }else if(resp & SANE_INFO_RELOAD_PARAMS){
         reloadParams();
@@ -92,11 +90,7 @@ std::tuple<unsigned char*,size_t,size_t,size_t> Scanner::scan(){ // idea: custom
     unsigned char* buffer = new unsigned char[bufferSize];
     SANE_Int bytesRead;
 
-    std::cout<<"line count: "<<lines<<"\t line length:"<<width<<std::endl;
-    std::cout<<"pixel width: "<<_params.pixels_per_line<<std::endl;
-    std::cout<<_params.depth<<std::endl;
-    std::cout<<scanSize<<std::endl;
-    std::cout<<"start reading..."<<std::endl;
+    std::cout<<"Scan params: "<<_params.bytes_per_line<<"\t"<<_params.pixels_per_line<<"\t"<<_params.lines<<"\t"<<_params.format<<"\t"<<_params.depth<<"\t"<<_params.last_frame<<std::endl;
 
     SANE_Status status;
 
