@@ -6,7 +6,7 @@
 
 int main(int argc, char ** argv)
 {
-    try{
+    /*try{
         int threadNumber = 1;
         boost::asio::io_context ioc{threadNumber};
         HttpListener server(ioc,boost::asio::ip::tcp::endpoint{boost::asio::ip::make_address("127.0.0.1"),2138});
@@ -15,7 +15,7 @@ int main(int argc, char ** argv)
 
     }catch(std::exception & e){
         std::cerr<<"Failed to start post server: "<<e.what()<<std::endl;
-    }
+    }*/
     
     //ScannerManager manager;
 
