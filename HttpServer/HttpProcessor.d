@@ -1,1 +1,1 @@
-HttpProcessor.o: HttpProcessor.cpp
+HttpServer/HttpProcessor.o: HttpServer/HttpProcessor.cpp

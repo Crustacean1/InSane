@@ -1,1 +1,2 @@
-HttpListener.o: HttpListener.cpp HttpListener.h
+HttpServer/HttpListener.o: HttpServer/HttpListener.cpp \
+ HttpServer/HttpListener.h

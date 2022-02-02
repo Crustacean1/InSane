@@ -1,1 +1,1 @@
-HttpSession.o: HttpSession.cpp
+HttpServer/HttpSession.o: HttpServer/HttpSession.cpp

@@ -1,17 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/kamil2/Projects/Vision/Backend'
  
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o ExecutionQueue.o ExecutionQueue.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o HttpListener.o HttpListener.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o HttpProcessor.o HttpProcessor.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o HttpSession.o HttpSession.cpp
- 
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o Image.o Image.cpp
- 
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o Scanner.o Scanner.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o ScannerManager.o ScannerManager.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o ScannerOption.o ScannerOption.cpp
-g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib   -c -o main.o main.cpp
-g++ -g -std=c++20 /home/kamil2/Libraries/uSockets/*.o -lsane -lz -L/home/kamil2/Libraries/ImageMagic/Magick++/lib/.libs/ -lMagick++-7.Q16HDRI -lpthread ExecutionQueue.o HttpListener.o HttpProcessor.o HttpSession.o Image.o Scanner.o ScannerManager.o ScannerOption.o main.o  -o Backend 
+make: 'Backend' is up to date.
 make: Leaving directory '/home/kamil2/Projects/Vision/Backend'
  
