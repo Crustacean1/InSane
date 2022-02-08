@@ -34,9 +34,9 @@ std::string ScannerOption::get(SANE_Word *details) const {
   if (_optionValue == nullptr) {
     return "";
   }
-  void *buffer = _optionValue->getBuffer();
+  std::cout<<"get: "<<_handle<<"\t"<<_optionNo<<std::endl;
   if (auto status = sane_control_option(_handle, _optionNo,
-                                        SANE_ACTION_GET_VALUE, buffer, details);
+                                        SANE_ACTION_GET_VALUE, _optionValue->getBuffer(), details);
       status != SANE_STATUS_GOOD) {
     throw std::runtime_error("Failed to retrieve option value: " +
                              std::string(sane_strstatus(status) + 
@@ -44,22 +44,24 @@ std::string ScannerOption::get(SANE_Word *details) const {
   }
   return _optionValue->get();
 }
+
 void ScannerOption::set(std::string newValue, SANE_Word *details) {
   if (_optionValue == nullptr) {
     throw std::runtime_error("Attempt to write to virtual parameter");
   }
   _optionValue->load(newValue);
-  void *buffer = _optionValue->getBuffer();
   if (auto status = sane_control_option(_handle, _optionNo,
-                                        SANE_ACTION_SET_VALUE, buffer, details);
+                                        SANE_ACTION_SET_VALUE, _optionValue->getBuffer(), details);
       status != SANE_STATUS_GOOD) {
     throw std::runtime_error("Failed to set option: " +
                              std::string(sane_strstatus(status)));
   }
 }
+
 std::vector<std::string> ScannerOption::getConstraints() const{
   std::vector<std::string> result;
   size_t size;
+
   switch(getConstraintType()){
     case SANE_CONSTRAINT_NONE:
       return result;
@@ -80,6 +82,5 @@ std::vector<std::string> ScannerOption::getConstraints() const{
       result.push_back(_optionValue->get());
       (*static_cast<SANE_Word*>(_optionValue->getBuffer())) = _desc->constraint.range->max;
       result.push_back(_optionValue->get());
-      
   }
 }

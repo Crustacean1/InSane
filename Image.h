@@ -13,6 +13,7 @@ class Image{
     public:
     virtual void setWidth(size_t width);
     virtual void setHeight(size_t height);
+    virtual size_t getPixelCount();
     virtual void setChannelCount(size_t channelCount);
     virtual void createBuffer() = 0;
     virtual void write(unsigned char * buffer, size_t size) = 0;

@@ -9,6 +9,8 @@
 #include <map>
 
 class Image;
+class ScanStatus;
+class ScannerOptionDto;
 
 class Scanner {
   SANE_Handle _scannerHandle;
@@ -18,20 +20,27 @@ class Scanner {
 
   static constexpr uint32_t CHANNELS[]={4};
   std::vector<std::unique_ptr<ScannerOption>> _options;
+
+  ScannerOption& getRawOption(size_t optionNo);
+  void initImage(Image &image);
+  void restoreState(SANE_Word & word);
 public:
     static void init();
     static std::vector<std::string> scanForScanners();
     Scanner(std::string scannerName);
     ~Scanner();
 
-
     void reloadOptions();
     void reloadParams();
 
     void debugDump();
-    ScannerOption& getOption(std::string name);
 
-    void initImage(Image &image);
-    void scan(Image &image);
+    size_t getOptionCount();
+
+
+    void setOption(size_t optionNo,std::string value);
+    ScannerOptionDto getOption(size_t optionNo);
+
+    void scan(Image &image,size_t & status);
 };
 #endif /*SCANNER*/

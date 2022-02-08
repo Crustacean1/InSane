@@ -1,4 +1,5 @@
 #include "Scanner/Scanner.h"
+#include "ScannerHandler/ScannerQueue.h"
 #include <iostream>
 #include "Image.h"
 //#include <nlohmann/json.hpp>
@@ -18,34 +19,30 @@ int main(int argc, char **argv) {
       std::cerr<<"Failed to start post server: "<<e.what()<<std::endl;
   }*/
 
-    if(argc<2){return -1;}
   try {
 
-//ScannerManager manager;
-//manager.refreshDeviceList();
-//std::cout<<manager.getScannerListInJson();
-    // manager.refreshDeviceList(); Can be used to find devices, but takes some
-    // time
-
-    /*scanner->setOption(2,std::string("Color"));
-    scanner->setOption(3,std::string("1200"));
-    scanner->setOption(8,std::string("None"));*/
-    /*Scanner::init();
-    auto scanners = Scanner::scanForScanners();
-    for(const auto &scannerName : scanners ){
-      std::cout<<"scanner found: "<<scannerName<<std::endl;
-    }*/
     std::string scannerName(argv[1]);
     std::cout<<"starting scanner initialization"<<std::endl;
-    auto scanner = new Scanner(scannerName);
-    // std::cout<<scanner->getOptionsInJson().dump()<<std::endl;
-    scanner->getOption("resolution").set("1200",NULL);
-    scanner->getOption("mode").set("Color",NULL);
-    scanner->debugDump();
 
-    PngImage newImage;;
-    scanner->scan(newImage);
-    newImage.save("image.png");
+    Scanner::init();
+    //ScannerQueue queue(std::make_unique<Scanner>(scannerName));
+    //queue.tryRefreshOptions();
+    auto scanner = new Scanner(scannerName);
+    auto optionCount = scanner->getOptionCount();
+    for(int i = 0;i<optionCount;++i) {
+      std::cout<<scanner->getOption(i).title<<std::endl;
+    }
+
+
+    //scanner->getOption("resolution").set("1200",NULL);
+
+    //scanner->setOption(0,"Color");
+    //scanner->debugDump();
+
+    /*PngImage newImage;
+    size_t progress;
+    scanner->scan(newImage,progress);
+    newImage.save("image.png");*/
 
   } catch (std::runtime_error &e) {
     std::cerr << e.what() << std::endl;

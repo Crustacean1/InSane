@@ -1,6 +1,15 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/kamil2/Projects/Vision/Backend'
  
-make: 'Backend' is up to date.
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Image.o Image.cpp
+ 
+make: *** No rule to make target 'Scanner/../ExecutionQueue.h', needed by 'main.o'.
+ 
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/Scanner.o Scanner/Scanner.cpp
+ 
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/ScannerOptionDto.o Scanner/ScannerOptionDto.cpp
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o ScannerHandler/ScannerHandler.o ScannerHandler/ScannerHandler.cpp
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o ScannerHandler/ScannerManager.o ScannerHandler/ScannerManager.cpp
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/uWebSockets/src -I/home/kamil2/Libraries/uSockets/src -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/json/include -I/home/kamil2/Libraries/ImageMagick -I/home/kamil2/Libraries/ImageMagick/Magick++/lib -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o ScannerHandler/ScannerQueue.o ScannerHandler/ScannerQueue.cpp
 make: Leaving directory '/home/kamil2/Projects/Vision/Backend'
  

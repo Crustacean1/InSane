@@ -1,4 +1,5 @@
 #include "Scanner.h"
+#include "ScannerOptionDto.h"
 #include <exception>
 #include <iostream>
 #include <algorithm>
@@ -37,24 +38,28 @@ void Scanner::reloadParams(){
                                 std::string(sane_strstatus(status)));
     }
 }
+
 void Scanner::initImage(Image & image){
     image.setWidth(_params.pixels_per_line);
     image.setHeight(_params.lines);
     image.setChannelCount(_params.format == SANE_FRAME_RGB ? 3 : 1);
 }
-void Scanner::scan(Image& image){ // idea: custom execption type for json wrapping
+
+void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execption type for json wrapping
     if(auto error_code = sane_start(_scannerHandle); error_code != SANE_STATUS_GOOD){
         switch(error_code){
             case SANE_STATUS_DEVICE_BUSY:
                 throw std::runtime_error("Device busy");
             default:
-                throw std::runtime_error("Failed to start scanning" + std::to_string(error_code));
+                throw std::runtime_error("Failed to start scanning: " + std::string(sane_strstatus(error_code)));
         }
     }
     reloadParams();
+
     initImage(image);
     image.createBuffer();
 
+    size_t expectedPixels = image.getPixelCount();
     size_t bufferSize = 1024; 
     size_t total = 0;
     
@@ -63,17 +68,21 @@ void Scanner::scan(Image& image){ // idea: custom execption type for json wrappi
 
     std::cout<<"Scan params: "<<_params.bytes_per_line<<"\t"<<_params.pixels_per_line<<"\t"<<_params.lines<<"\t"<<_params.format<<"\t"<<_params.depth<<"\t"<<_params.last_frame<<std::endl;
 
-    SANE_Status status;
+    SANE_Status readStatus;
 
-    while((status = sane_read(_scannerHandle,buffer,bufferSize,&bytesRead)) == SANE_STATUS_GOOD){
+    while((readStatus = sane_read(_scannerHandle,buffer,bufferSize,&bytesRead)) == SANE_STATUS_GOOD){
         image.write(buffer,bytesRead);
         total += bytesRead;
+        scanProgress = total * 100 / expectedPixels;
     }
+
     std::cout<<"read: "<<total<<" bytes+"<<bytesRead<<std::endl;
+
     delete[] buffer;
-    if(status != SANE_STATUS_EOF && status != SANE_STATUS_GOOD){
-        std::cout<<status<<std::endl;
-        throw std::runtime_error("Failed during read");
+
+    if(readStatus != SANE_STATUS_EOF && readStatus != SANE_STATUS_GOOD){
+        std::cout<<readStatus<<std::endl;
+        throw std::runtime_error("Failed during read: " + std::string(sane_strstatus(readStatus)));
     }
 }
 
@@ -91,14 +100,40 @@ void Scanner::debugDump(){
         std::cout<<"\n\n\n";
     }
 }
-ScannerOption& Scanner::getOption(std::string title){
-    if(auto option = std::find_if(_options.begin(),_options.end(),
-    [&title](const std::unique_ptr<ScannerOption>& option)
-    {return option->getName() == title;}); 
-    option != _options.end()){
-    return *(*option).get();
+size_t Scanner::getOptionCount(){
+    return _options.size();
+}
+
+ScannerOption& Scanner::getRawOption(size_t optionNo){
+    if(optionNo>_options.size()){
+        throw std::runtime_error("Tried to access nonexistent option");
     }
-    throw std::runtime_error("Tried to access non existent option");
+    return *_options[optionNo];
+}
+
+void Scanner::restoreState(SANE_Word & details){
+    if(details & SANE_INFO_RELOAD_OPTIONS){
+        reloadOptions();
+    }
+    if(details & SANE_INFO_RELOAD_PARAMS){
+        reloadParams();
+    }
+}
+
+void Scanner::setOption(size_t optionNo, std::string value){
+    auto & option = getRawOption(optionNo);
+    SANE_Word details;
+    option.set(value,&details);
+    //restoreState(details);
+}
+
+ScannerOptionDto Scanner::getOption(size_t optionNo){
+    auto & option = getRawOption(optionNo);
+    SANE_Word details;
+    ScannerOptionDto result(optionNo,option,&details);
+    std::cout<<"returning result: "<<result.title<<std::endl;
+    //restoreState(details);
+    return result;
 }
 
 std::vector<std::string> Scanner::scanForScanners(){
@@ -113,6 +148,7 @@ std::vector<std::string> Scanner::scanForScanners(){
     }
     return result;
 }
+
 void Scanner::init(){
     SANE_Int version = 1;
     if(auto status = sane_init(&version,NULL); status != SANE_STATUS_GOOD){
