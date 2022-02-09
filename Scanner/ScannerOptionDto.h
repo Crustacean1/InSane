@@ -34,6 +34,7 @@ class ScannerOptionDto{
     public:
     ScannerOptionDto(size_t optionNo, const ScannerOption& scannerOption, SANE_Word * ptr);
     std::string title;
+    std::string desc;
     std::string value;
     std::vector<std::string> valueList;
     std::string unit;
@@ -41,6 +42,12 @@ class ScannerOptionDto{
     std::string type;
     std::string optionNo;
     std::string active;
+    void debug();
+};
+
+class OptionDtoCollection{
+    public:
+    std::vector<ScannerOptionDto> options;
 };
 
 #endif /*SCANNER_OPTION_DTO*/

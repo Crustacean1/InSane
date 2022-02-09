@@ -18,15 +18,13 @@ Scanner::~Scanner() {
 }
 
 void Scanner::reloadOptions(){
-    if(auto status = sane_get_parameters(_scannerHandle,&_params);status != SANE_STATUS_GOOD){
-        throw std::runtime_error("Couldn't read parameters" + std::string(sane_strstatus(status)));
-    }
-    SANE_Word optionCount;
-    if(auto status = sane_control_option(_scannerHandle,0,SANE_ACTION_GET_VALUE,&optionCount,NULL); status != SANE_STATUS_GOOD){
-        throw std::runtime_error("Couldn't read parameters" + std::string(sane_strstatus(status)));
+    SANE_Status status;
+    status = sane_get_parameters(_scannerHandle,&_params);
+    if(status != SANE_STATUS_GOOD){
+        throw std::runtime_error("Couldn't read parameters: " + std::string(sane_strstatus(status)));
     }
     _options.clear();
-    for(SANE_Word i = 0;i<optionCount;++i){
+    for(SANE_Word i = 1;sane_get_option_descriptor(_scannerHandle,i) != NULL;++i){
         std::unique_ptr<ScannerOption> option = std::make_unique<ScannerOption>(_scannerHandle,i);
         _options.push_back(std::move(option));
     }
@@ -60,7 +58,7 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
     image.createBuffer();
 
     size_t expectedPixels = image.getPixelCount();
-    size_t bufferSize = 1024; 
+    size_t bufferSize = 8096; 
     size_t total = 0;
     
     unsigned char* buffer = new unsigned char[bufferSize];
@@ -71,7 +69,7 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
     SANE_Status readStatus;
 
     while((readStatus = sane_read(_scannerHandle,buffer,bufferSize,&bytesRead)) == SANE_STATUS_GOOD){
-        image.write(buffer,bytesRead);
+        image.read(buffer,bytesRead);
         total += bytesRead;
         scanProgress = total * 100 / expectedPixels;
     }
@@ -124,15 +122,15 @@ void Scanner::setOption(size_t optionNo, std::string value){
     auto & option = getRawOption(optionNo);
     SANE_Word details;
     option.set(value,&details);
-    //restoreState(details);
+    std::cout<<"Option set"<<std::endl;
+    restoreState(details);
 }
 
 ScannerOptionDto Scanner::getOption(size_t optionNo){
     auto & option = getRawOption(optionNo);
     SANE_Word details;
     ScannerOptionDto result(optionNo,option,&details);
-    std::cout<<"returning result: "<<result.title<<std::endl;
-    //restoreState(details);
+    restoreState(details);
     return result;
 }
 

@@ -1,7 +1,6 @@
 #include "Image.h"
 #include <png.h>
 #include <cstring>
-#include <Magick++.h>
 #include <iostream>
 
 /*Image::Image() {
@@ -26,10 +25,10 @@ void PngImage::createBuffer(){
     }
 }
 
-void PngImage::write(unsigned char * buffer,size_t size){
+void PngImage::read(unsigned char * buffer,size_t size){
     _buffer.insert(_buffer.end(),buffer,buffer +size);
 }
-void PngImage::save(std::string filename){
+void PngImage::writeToFile(std::string filename){
     if(_height == 0){
         _height = _pos/_width;
     }
@@ -37,4 +36,16 @@ void PngImage::save(std::string filename){
     std::cout<<_width<<"\t"<<_height<<"\t"<<_channelCount<<std::endl;
     Magick::Image outputImage(_width,_height,_channelCount == 3 ? "RGB" : "K",Magick::CharPixel,static_cast<const void*>(_buffer.data()));
     outputImage.write(filename);
+}
+
+void PngImage::writeToMemory(){
+    Magick::Image outputImage(_width,_height,_channelCount == 3 ? "RGB" : "K",Magick::CharPixel,static_cast<const void*>(_buffer.data()));
+    outputImage.write(&_blob);
+}
+
+size_t PngImage::getImageSize(){
+    return _blob.length(); 
+}
+const void * PngImage::getImageMemory(){
+    return _blob.data();
 }

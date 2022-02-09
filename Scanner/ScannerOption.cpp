@@ -30,11 +30,11 @@ SANE_Word ScannerOption::getConstraintType() const {
   return _desc->constraint_type;
 }
 
+
 std::string ScannerOption::get(SANE_Word *details) const {
-  if (_optionValue == nullptr) {
+  if (_optionValue == nullptr || !SANE_OPTION_IS_ACTIVE(_desc->cap)) {
     return "";
   }
-  std::cout<<"get: "<<_handle<<"\t"<<_optionNo<<std::endl;
   if (auto status = sane_control_option(_handle, _optionNo,
                                         SANE_ACTION_GET_VALUE, _optionValue->getBuffer(), details);
       status != SANE_STATUS_GOOD) {
@@ -46,7 +46,7 @@ std::string ScannerOption::get(SANE_Word *details) const {
 }
 
 void ScannerOption::set(std::string newValue, SANE_Word *details) {
-  if (_optionValue == nullptr) {
+  if (_optionValue == nullptr || !SANE_OPTION_IS_SETTABLE(_desc->cap) || !SANE_OPTION_IS_ACTIVE(_desc->cap)) {
     throw std::runtime_error("Attempt to write to virtual parameter");
   }
   _optionValue->load(newValue);
@@ -83,4 +83,5 @@ std::vector<std::string> ScannerOption::getConstraints() const{
       (*static_cast<SANE_Word*>(_optionValue->getBuffer())) = _desc->constraint.range->max;
       result.push_back(_optionValue->get());
   }
+  throw std::runtime_error("In: ScannerOption::getConstraints: Unexpected range");
 }

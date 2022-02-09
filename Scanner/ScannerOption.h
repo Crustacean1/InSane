@@ -24,6 +24,9 @@ class ScannerOption{
     std::string getName() const;
     std::string getTitle() const;
     std::string getDesc() const;
+    
+    bool isActive() const;
+    bool isSettable() const;
 
     SANE_Word getSize() const;
     SANE_Word getUnit() const;

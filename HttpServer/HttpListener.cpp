@@ -4,6 +4,7 @@
 #include <boost/beast/http.hpp>
 #include <boost/beast/core.hpp>
 #include <iostream>
+#include "HttpSession.h"
 
 HttpListener::HttpListener(boost::asio::io_context & ioc,boost::asio::ip::tcp::endpoint endpoint) : _ioc(ioc), _acceptor(boost::asio::make_strand(_ioc)){
     boost::beast::error_code ec;
@@ -26,10 +27,11 @@ void HttpListener::run(){
 }
 void HttpListener::onAccept(boost::beast::error_code ec,boost::asio::ip::tcp::socket socket){
     
-    std::cout<<"Connection established"<<std::endl;
     if(ec){
-        std::cout<<ec<<std::endl;
+        std::cerr<<"failed to establish conection: "<<ec<<std::endl;
         return;
     }
-    run(); 
+    std::cout<<"connection established"<<std::endl;
+    std::make_shared<HttpSession>(std::move(socket))->run();
+    run();
 }

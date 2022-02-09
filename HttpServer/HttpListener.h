@@ -10,6 +10,7 @@ class HttpListener{
     boost::asio::ip::tcp::acceptor _acceptor;
     
     void onAccept(boost::beast::error_code ec,boost::asio::ip::tcp::socket socket);
+
     public:
     HttpListener(boost::asio::io_context & context,boost::asio::ip::tcp::endpoint endpoint);
     void run();
