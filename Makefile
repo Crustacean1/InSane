@@ -22,5 +22,7 @@ ${TARGET}: ${OBJECTS}
 clean:
 	rm -f *.o
 	rm -f */*.o
+	rm -f */*/*.o
 	rm -f *.d
 	rm -f */*.d
+	rm -f */*/*.d

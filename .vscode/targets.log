@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Feb  9 22:47:04 2022
+# Make data base, printed on Sat Feb 12 14:26:51 2022
 
 # Variables
 
@@ -19,9 +19,9 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-I3SOCK = /run/user/1003/i3/ipc-socket.3840
+I3SOCK = /run/user/1003/i3/ipc-socket.3849
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-4f25bd65-d4df-4b95-9dc6-e8a24f7c6f42.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-87724214-9f7f-4c5b-93ea-46139a95839f.sock
 # environment
 VSCODE_CWD = /home/kamil2
 # default
@@ -81,13 +81,13 @@ XDG_SESSION_DESKTOP = i3
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"Code - OSS","submitURL":"","uploadToServer":false}
 # makefile (from 'main.d', line 1)
-MAKEFILE_LIST := Makefile Image.d main.d HttpServer/HttpListener.d HttpServer/HttpSession.d Scanner/OptionValue.d Scanner/Scanner.d Scanner/ScannerManager.d Scanner/ScannerOption.d Scanner/ScannerOptionDto.d ScannerHandler/ScannerHandler.d ScannerHandler/ScannerManager.d ScannerHandler/ScannerQueue.d HttpServer/HttpProcessor/HttpMiddleware.d HttpServer/HttpProcessor/HttpProcessor.d main.d
+MAKEFILE_LIST := Makefile Image.d main.d Logic/ScannerProcessorBuilder.d Scanner/OptionValue.d Scanner/Scanner.d Scanner/ScannerOption.d Scanner/ScannerOptionDto.d ScannerHandler/ScannerHandler.d ScannerHandler/ScannerManager.d ScannerHandler/ScannerQueue.d HttpServer/HttpEndpoint/HttpEndpoint.d HttpServer/HttpEndpoint/ScannerEndpoint.d HttpServer/HttpListener/HttpListener.d HttpServer/HttpListener/HttpSession.d HttpServer/HttpProcessor/HttpMiddleware.d HttpServer/HttpProcessor/HttpProcessor.d main.d
 # automatic
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4008
+VSCODE_PID = 4465
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -145,7 +145,7 @@ DESKTOP_SESSION = i3
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = i3
 # makefile (from 'Makefile', line 2)
-OBJECTS := Image.o main.o HttpServer/HttpListener.o HttpServer/HttpSession.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerManager.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerHandler.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpProcessor/HttpMiddleware.o HttpServer/HttpProcessor/HttpProcessor.o
+OBJECTS := Image.o main.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerHandler.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/ScannerEndpoint.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpProcessor/HttpMiddleware.o HttpServer/HttpProcessor/HttpProcessor.o
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -179,6 +179,7 @@ HOME = /home/kamil2
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
+ 
 VSCODE_IPC_HOOK = /run/user/1003/vscode-b3071441-1.64.0-main.sock
 # environment
 XDG_SESSION_ID = 2
@@ -201,11 +202,11 @@ CXXFLAGS = -g -Wall  -std=c++20 -MMD ${IDIRS} -DMAGICKCORE_QUANTUM_DEPTH=16 -DMA
 # makefile (from 'Makefile', line 11)
 CXX = g++
 # makefile (from 'Makefile', line 1)
-SOURCES := Image.cpp main.cpp HttpServer/HttpListener.cpp HttpServer/HttpSession.cpp Scanner/OptionValue.cpp Scanner/Scanner.cpp Scanner/ScannerManager.cpp Scanner/ScannerOption.cpp Scanner/ScannerOptionDto.cpp ScannerHandler/ScannerHandler.cpp ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerQueue.cpp HttpServer/HttpProcessor/HttpMiddleware.cpp HttpServer/HttpProcessor/HttpProcessor.cpp
+SOURCES := Image.cpp main.cpp Logic/ScannerProcessorBuilder.cpp Scanner/OptionValue.cpp Scanner/Scanner.cpp Scanner/ScannerOption.cpp Scanner/ScannerOptionDto.cpp ScannerHandler/ScannerHandler.cpp ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerQueue.cpp HttpServer/HttpEndpoint/HttpEndpoint.cpp HttpServer/HttpEndpoint/ScannerEndpoint.cpp HttpServer/HttpListener/HttpListener.cpp HttpServer/HttpListener/HttpSession.cpp HttpServer/HttpProcessor/HttpMiddleware.cpp HttpServer/HttpProcessor/HttpProcessor.cpp
 # environment
 DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=96/1024=9%, Rehash=0, Collisions=4/165=2%
+# Load=96/1024=9%, Rehash=0, Collisions=4/169=2%
 
 # Pattern-specific Variable Values
 
@@ -214,12 +215,15 @@ DOTNET_ROOT = /usr/share/dotnet
 # Directories
 
 # ScannerHandler (device 2049, inode 23993738): 14 files, no impossibilities.
-# HttpServer (device 2049, inode 23993350): 11 files, no impossibilities.
-# Scanner (device 2049, inode 23993263): 22 files, no impossibilities.
-# . (device 2049, inode 23618226): 17 files, no impossibilities.
-# HttpServer/HttpProcessor (device 2049, inode 23993662): 9 files, no impossibilities.
+# Logic (device 2049, inode 23993194): 6 files, no impossibilities.
+# HttpServer/HttpEndpoint (device 2049, inode 24513945): 10 files, no impossibilities.
+# HttpServer (device 2049, inode 23993350): 5 files, no impossibilities.
+# Scanner (device 2049, inode 23993263): 18 files, no impossibilities.
+# . (device 2049, inode 23618226): 19 files, no impossibilities.
+# HttpServer/HttpListener (device 2049, inode 24510898): 10 files, no impossibilities.
+# HttpServer/HttpProcessor (device 2049, inode 23993662): 11 files, no impossibilities.
 
-# 73 files, no impossibilities in 5 directories.
+# 93 files, no impossibilities in 8 directories.
 
 # Implicit Rules
 
@@ -230,19 +234,14 @@ DOTNET_ROOT = /usr/share/dotnet
 # Not a target:
 ScannerHandler/ScannerQueue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:01.733161475
+#  Last modified 2022-02-11 19:47:50.776932909
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-Scanner/ScannerManager.cpp:
-#  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -271,13 +270,20 @@ Scanner/ScannerManager.cpp:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Backend: Image.o main.o HttpServer/HttpListener.o HttpServer/HttpSession.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerManager.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerHandler.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpProcessor/HttpMiddleware.o HttpServer/HttpProcessor/HttpProcessor.o
+Backend: Image.o main.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerHandler.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/ScannerEndpoint.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpProcessor/HttpMiddleware.o HttpServer/HttpProcessor/HttpProcessor.o
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -296,6 +302,12 @@ Scanner/../Image.h:
 #  File has not been updated.
 
 # Not a target:
+Logic/../HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -304,26 +316,25 @@ Scanner/../Image.h:
 # Not a target:
 ScannerHandler/ScannerManager.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:00.023147099
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-HttpServer/HttpListener.d:
-#  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:46:35.234369387
+#  Last modified 2022-02-11 19:49:52.64161703
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Scanner/ScannerOptionDto.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:06.146531907
+#  Last modified 2022-02-11 19:47:55.420317712
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/ScannerProcessorBuilder.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -335,10 +346,16 @@ Scanner/ScannerOptionDto.d:
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../ScannerHandler/../Scanner/OptionValue.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -353,10 +370,23 @@ ScannerHandler/ScannerManager.o: ScannerHandler/ScannerManager.cpp ScannerHandle
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/../HttpProcessor/HttpMiddleware.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+HttpServer/HttpEndpoint/HttpEndpoint.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-11 19:47:59.630364378
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h:
@@ -406,18 +436,18 @@ ScannerHandler/ScannerManager.o: ScannerHandler/ScannerManager.cpp ScannerHandle
 #  Modification time never checked.
 #  File has not been updated.
 
+HttpServer/HttpListener/HttpListener.o: HttpServer/HttpListener/HttpListener.cpp HttpServer/HttpListener/HttpListener.h HttpServer/HttpListener/HttpSession.h HttpServer/HttpListener/../HttpProcessor/HttpProcessor.h HttpServer/HttpListener/../HttpProcessor/HttpMiddleware.h HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/../HttpProcessor/HttpMiddleware.h HttpServer/HttpListener/../HttpProcessor/ProcessorBuilder.h HttpServer/HttpListener/../HttpProcessor/../HttpProcessor/HttpProcessor.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-HttpServer/HttpListener.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
+ 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h:
 #  Implicit rule search has not been done.
@@ -433,7 +463,7 @@ HttpServer/HttpListener.cpp:
 # Not a target:
 Scanner/ScannerOption.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:05.366525351
+#  Last modified 2022-02-11 19:47:54.470307181
 #  File has been updated.
 #  Successfully updated.
 
@@ -456,9 +486,15 @@ Scanner/ScannerOption.d:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/../HttpProcessor/HttpProcessor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 HttpServer/HttpProcessor/HttpMiddleware.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:46:55.884579603
+#  Last modified 2022-02-11 19:48:23.69729781
 #  File has been updated.
 #  Successfully updated.
 
@@ -483,6 +519,7 @@ Scanner/Scanner.o: Scanner/Scanner.cpp Scanner/Scanner.h /home/kamil2/Libraries/
 /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -503,12 +540,18 @@ Image.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+Logic/ScannerProcessorBuilder.o: Logic/ScannerProcessorBuilder.cpp Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../HttpServer/HttpEndpoint/ScannerEndpoint.h Logic/../HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpProcessor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h:
 #  Implicit rule search has not been done.
@@ -535,13 +578,13 @@ Scanner/OptionValue.o: Scanner/OptionValue.cpp Scanner/OptionValue.h /home/kamil
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-02-09 22:46:51.584535829
+#  Last modified 2022-02-10 19:06:29.085248108
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -573,7 +616,7 @@ Image.h:
 # Not a target:
 Scanner/Scanner.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:03.886512908
+#  Last modified 2022-02-11 19:47:53.293627472
 #  File has been updated.
 #  Successfully updated.
 
@@ -592,7 +635,7 @@ Scanner/Scanner.d:
 # Not a target:
 Scanner/OptionValue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:02.589835343
+#  Last modified 2022-02-11 19:47:51.743610291
 #  File has been updated.
 #  Successfully updated.
 
@@ -614,8 +657,14 @@ Scanner/ScannerOptionDto.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+HttpServer/HttpEndpoint/ScannerEndpoint.o: HttpServer/HttpEndpoint/ScannerEndpoint.cpp HttpServer/HttpEndpoint/ScannerEndpoint.h HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h HttpServer/HttpEndpoint/HttpEndpoint.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -663,11 +712,19 @@ clean:
 #  recipe to execute (from 'Makefile', line 23):
 	rm -f *.o
 	rm -f */*.o
+	rm -f */*/*.o
 	rm -f *.d
 	rm -f */*.d
+	rm -f */*/*.d
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../ScannerHandler/../Scanner/Scanner.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -686,6 +743,7 @@ clean:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -710,6 +768,12 @@ clean:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpListener/../HttpProcessor/HttpMiddleware.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -751,7 +815,26 @@ clean:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpEndpoint/ScannerEndpoint.d:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-02-11 19:48:03.387072685
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+HttpServer/HttpEndpoint/HttpEndpoint.o: HttpServer/HttpEndpoint/HttpEndpoint.cpp HttpServer/HttpEndpoint/HttpEndpoint.h HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpListener/../HttpProcessor/ProcessorBuilder.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -763,13 +846,25 @@ clean:
 #  File has not been updated.
 
 # Not a target:
-Scanner/ScannerManager.h:
+Logic/../ScannerHandler/ScannerQueue.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 ScannerHandler/../Image.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpEndpoint/HttpEndpoint.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -803,14 +898,15 @@ Scanner/ScannerOptionDto.o: Scanner/ScannerOptionDto.cpp Scanner/ScannerOptionDt
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
-HttpServer/HttpSession.cpp:
+/home/kamil2/Libraries/ImageMagick/MagickCore/segment.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-/home/kamil2/Libraries/ImageMagick/MagickCore/segment.h:
+Logic/../ScannerHandler/ScannerManager.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -827,7 +923,8 @@ Scanner/ScannerOption.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-Scanner/ScannerManager.o: Scanner/ScannerManager.cpp Scanner/ScannerManager.h /home/kamil2/Libraries/backends/include/sane/sane.h
+# Not a target:
+HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -836,7 +933,6 @@ Scanner/ScannerManager.o: Scanner/ScannerManager.cpp Scanner/ScannerManager.h /h
 /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -848,14 +944,14 @@ Scanner/ScannerManager.o: Scanner/ScannerManager.cpp Scanner/ScannerManager.h /h
 # Not a target:
 HttpServer/HttpProcessor/HttpProcessor.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:46:59.334614724
+#  Last modified 2022-02-11 19:52:20.759925427
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Image.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:30:39.966311822
+#  Last modified 2022-02-11 19:47:13.433185655
 #  File has been updated.
 #  Successfully updated.
 
@@ -879,6 +975,13 @@ Image.d:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpListener/HttpSession.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -939,11 +1042,10 @@ all:
 #  File has not been updated.
 
 # Not a target:
-Scanner/ScannerManager.d:
-#  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:31:04.563185264
-#  File has been updated.
-#  Successfully updated.
+Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpMiddleware.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h:
@@ -951,13 +1053,15 @@ Scanner/ScannerManager.d:
 #  Modification time never checked.
 #  File has not been updated.
 
-HttpServer/HttpSession.o: HttpServer/HttpSession.cpp HttpServer/HttpSession.h HttpServer/HttpProcessor/HttpProcessor.h HttpServer/HttpProcessor/HttpMiddleware.h
+# Not a target:
+ 
+/home/kamil2/Libraries/ImageMagick/MagickCore/client.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-/home/kamil2/Libraries/ImageMagick/MagickCore/client.h:
+HttpServer/HttpEndpoint/ScannerEndpoint.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -975,6 +1079,12 @@ HttpServer/HttpSession.o: HttpServer/HttpSession.cpp HttpServer/HttpSession.h Ht
 #  File has not been updated.
 
 # Not a target:
+Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpProcessor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 ScannerHandler/ScannerHandler.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -987,7 +1097,6 @@ main.cpp:
 #  File has not been updated.
 
 # Not a target:
- 
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1021,12 +1130,7 @@ Scanner/ScannerOption.o: Scanner/ScannerOption.cpp Scanner/ScannerOption.h /home
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-HttpServer/HttpSession.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+ 
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h:
@@ -1036,6 +1140,12 @@ HttpServer/HttpSession.h:
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1064,8 +1174,8 @@ ScannerHandler/../Scanner/Scanner.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-main.o: main.cpp Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Scanner/ScannerOption.h Scanner/OptionValue.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h ScannerHandler/../Scanner/ScannerOptionDto.h Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Include.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-baseconfig.h /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h /home/kamil2/Libraries/ImageMagick/MagickCore/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-type.h /home/kamil2/Libraries/ImageMagick/MagickCore/animate.h /home/kamil2/Libraries/ImageMagick/MagickCore/annotate.h /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h /home/kamil2/Libraries/ImageMagick/MagickCore/geometry.h /home/kamil2/Libraries/ImageMagick/MagickCore/image.h /home/kamil2/Libraries/ImageMagick/MagickCore/blob.h /home/kamil2/Libraries/ImageMagick/MagickCore/stream.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h /home/kamil2/Libraries/ImageMagick/MagickCore/colorspace.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/color.h /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h /home/kamil2/Libraries/ImageMagick/MagickCore/semaphore.h /home/kamil2/Libraries/ImageMagick/MagickCore/composite.h /home/kamil2/Libraries/ImageMagick/MagickCore/compress.h /home/kamil2/Libraries/ImageMagick/MagickCore/effect.h /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h /home/kamil2/Libraries/ImageMagick/MagickCore/layer.h /home/kamil2/Libraries/ImageMagick/MagickCore/locale_.h /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h /home/kamil2/Libraries/ImageMagick/MagickCore/monitor.h /home/kamil2/Libraries/ImageMagick/MagickCore/profile.h /home/kamil2/Libraries/ImageMagick/MagickCore/string_.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantum.h /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h /home/kamil2/Libraries/ImageMagick/MagickCore/resize.h /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h /home/kamil2/Libraries/ImageMagick/MagickCore/type.h /home/kamil2/Libraries/ImageMagick/MagickCore/artifact.h /home/kamil2/Libraries/ImageMagick/MagickCore/attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/channel.h /home/kamil2/Libraries/ImageMagick/MagickCore/cipher.h /home/kamil2/Libraries/ImageMagick/MagickCore/client.h /home/kamil2/Libraries/ImageMagick/MagickCore/coder.h /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h /home/kamil2/Libraries/ImageMagick/MagickCore/configure.h /home/kamil2/Libraries/ImageMagick/MagickCore/constitute.h /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h /home/kamil2/Libraries/ImageMagick/MagickCore/delegate.h /home/kamil2/Libraries/ImageMagick/MagickCore/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h /home/kamil2/Libraries/ImageMagick/MagickCore/display.h /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h /home/kamil2/Libraries/ImageMagick/MagickCore/distribute-cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h /home/kamil2/Libraries/ImageMagick/MagickCore/fx.h /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h /home/kamil2/Libraries/ImageMagick/MagickCore/random_.h /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h /home/kamil2/Libraries/ImageMagick/MagickCore/identify.h /home/kamil2/Libraries/ImageMagick/MagickCore/image-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/list.h /home/kamil2/Libraries/ImageMagick/MagickCore/log.h /home/kamil2/Libraries/ImageMagick/MagickCore/magic.h /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h /home/kamil2/Libraries/ImageMagick/MagickCore/memory_.h /home/kamil2/Libraries/ImageMagick/MagickCore/module.h /home/kamil2/Libraries/ImageMagick/MagickCore/version.h /home/kamil2/Libraries/ImageMagick/MagickCore/mime.h /home/kamil2/Libraries/ImageMagick/MagickCore/montage.h /home/kamil2/Libraries/ImageMagick/MagickCore/opencl.h /home/kamil2/Libraries/ImageMagick/MagickCore/option.h /home/kamil2/Libraries/ImageMagick/MagickCore/paint.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h /home/kamil2/Libraries/ImageMagick/MagickCore/policy.h /home/kamil2/Libraries/ImageMagick/MagickCore/prepress.h /home/kamil2/Libraries/ImageMagick/MagickCore/property.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantize.h /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h /home/kamil2/Libraries/ImageMagick/MagickCore/shear.h /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h /home/kamil2/Libraries/ImageMagick/MagickCore/splay-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/static.h /home/kamil2/Libraries/ImageMagick/MagickCore/statistic.h /home/kamil2/Libraries/ImageMagick/MagickCore/token.h /home/kamil2/Libraries/ImageMagick/MagickCore/transform.h /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h /home/kamil2/Libraries/ImageMagick/MagickCore/vision.h /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/xwindow.h /home/kamil2/Libraries/ImageMagick/MagickWand/MagickWand.h /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h /home/kamil2/Libraries/ImageMagick/MagickWand/compare.h /home/kamil2/Libraries/ImageMagick/MagickWand/composite.h /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/display.h /home/kamil2/Libraries/ImageMagick/MagickWand/drawing-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h /home/kamil2/Libraries/ImageMagick/MagickWand/import.h /home/kamil2/Libraries/ImageMagick/MagickWand/wandcli.h /home/kamil2/Libraries/ImageMagick/MagickWand/operation.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-image.h /home/kamil2/Libraries/ImageMagick/MagickWand/mogrify.h /home/kamil2/Libraries/ImageMagick/MagickWand/montage.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-iterator.h /home/kamil2/Libraries/ImageMagick/MagickWand/stream.h /home/kamil2/Libraries/ImageMagick/MagickWand/wand-view.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Functions.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Blob.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Exception.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/TypeMetric.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Pixels.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/ResourceLimits.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/STL.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h HttpServer/HttpListener.h Scanner/ScannerManager.h main.cpp Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Scanner/ScannerOption.h Scanner/OptionValue.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h ScannerHandler/../Scanner/ScannerOptionDto.h Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Include.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-baseconfig.h /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h /home/kamil2/Libraries/ImageMagick/MagickCore/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-type.h /home/kamil2/Libraries/ImageMagick/MagickCore/animate.h /home/kamil2/Libraries/ImageMagick/MagickCore/annotate.h /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h /home/kamil2/Libraries/ImageMagick/MagickCore/geometry.h /home/kamil2/Libraries/ImageMagick/MagickCore/image.h /home/kamil2/Libraries/ImageMagick/MagickCore/blob.h /home/kamil2/Libraries/ImageMagick/MagickCore/stream.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h /home/kamil2/Libraries/ImageMagick/MagickCore/colorspace.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/color.h /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h /home/kamil2/Libraries/ImageMagick/MagickCore/semaphore.h /home/kamil2/Libraries/ImageMagick/MagickCore/composite.h /home/kamil2/Libraries/ImageMagick/MagickCore/compress.h /home/kamil2/Libraries/ImageMagick/MagickCore/effect.h /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h /home/kamil2/Libraries/ImageMagick/MagickCore/layer.h /home/kamil2/Libraries/ImageMagick/MagickCore/locale_.h /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h /home/kamil2/Libraries/ImageMagick/MagickCore/monitor.h /home/kamil2/Libraries/ImageMagick/MagickCore/profile.h /home/kamil2/Libraries/ImageMagick/MagickCore/string_.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantum.h /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h /home/kamil2/Libraries/ImageMagick/MagickCore/resize.h /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h /home/kamil2/Libraries/ImageMagick/MagickCore/type.h /home/kamil2/Libraries/ImageMagick/MagickCore/artifact.h /home/kamil2/Libraries/ImageMagick/MagickCore/attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/channel.h /home/kamil2/Libraries/ImageMagick/MagickCore/cipher.h /home/kamil2/Libraries/ImageMagick/MagickCore/client.h /home/kamil2/Libraries/ImageMagick/MagickCore/coder.h /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h /home/kamil2/Libraries/ImageMagick/MagickCore/configure.h /home/kamil2/Libraries/ImageMagick/MagickCore/constitute.h /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h /home/kamil2/Libraries/ImageMagick/MagickCore/delegate.h /home/kamil2/Libraries/ImageMagick/MagickCore/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h /home/kamil2/Libraries/ImageMagick/MagickCore/display.h /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h /home/kamil2/Libraries/ImageMagick/MagickCore/distribute-cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h /home/kamil2/Libraries/ImageMagick/MagickCore/fx.h /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h /home/kamil2/Libraries/ImageMagick/MagickCore/random_.h /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h /home/kamil2/Libraries/ImageMagick/MagickCore/identify.h /home/kamil2/Libraries/ImageMagick/MagickCore/image-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/list.h /home/kamil2/Libraries/ImageMagick/MagickCore/log.h /home/kamil2/Libraries/ImageMagick/MagickCore/magic.h /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h /home/kamil2/Libraries/ImageMagick/MagickCore/memory_.h /home/kamil2/Libraries/ImageMagick/MagickCore/module.h /home/kamil2/Libraries/ImageMagick/MagickCore/version.h /home/kamil2/Libraries/ImageMagick/MagickCore/mime.h /home/kamil2/Libraries/ImageMagick/MagickCore/montage.h /home/kamil2/Libraries/ImageMagick/MagickCore/open 
-cl.h /home/kamil2/Libraries/ImageMagick/MagickCore/option.h /home/kamil2/Libraries/ImageMagick/MagickCore/paint.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h /home/kamil2/Libraries/ImageMagick/MagickCore/policy.h /home/kamil2/Libraries/ImageMagick/MagickCore/prepress.h /home/kamil2/Libraries/ImageMagick/MagickCore/property.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantize.h /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h /home/kamil2/Libraries/ImageMagick/MagickCore/shear.h /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h /home/kamil2/Libraries/ImageMagick/MagickCore/splay-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/static.h /home/kamil2/Libraries/ImageMagick/MagickCore/statistic.h /home/kamil2/Libraries/ImageMagick/MagickCore/token.h /home/kamil2/Libraries/ImageMagick/MagickCore/transform.h /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h /home/kamil2/Libraries/ImageMagick/MagickCore/vision.h /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/xwindow.h /home/kamil2/Libraries/ImageMagick/MagickWand/MagickWand.h /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h /home/kamil2/Libraries/ImageMagick/MagickWand/compare.h /home/kamil2/Libraries/ImageMagick/MagickWand/composite.h /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/display.h /home/kamil2/Libraries/ImageMagick/MagickWand/drawing-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h /home/kamil2/Libraries/ImageMagick/MagickWand/import.h /home/kamil2/Libraries/ImageMagick/MagickWand/wandcli.h /home/kamil2/Libraries/ImageMagick/MagickWand/operation.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-image.h /home/kamil2/Libraries/ImageMagick/MagickWand/mogrify.h /home/kamil2/Libraries/ImageMagick/MagickWand/montage.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-iterator.h /home/kamil2/Libraries/ImageMagick/MagickWand/stream.h /home/kamil2/Libraries/ImageMagick/MagickWand/wand-view.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Functions.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Blob.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Exception.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/TypeMetric.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Pixels.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/ResourceLimits.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/STL.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h HttpServer/HttpListener.h Scanner/ScannerManager.h
+main.o: main.cpp Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Scanner/ScannerOption.h Scanner/OptionValue.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h ScannerHandler/../Scanner/ScannerOptionDto.h Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Include.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-baseconfig.h /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h /home/kamil2/Libraries/ImageMagick/MagickCore/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-type.h /home/kamil2/Libraries/ImageMagick/MagickCore/animate.h /home/kamil2/Libraries/ImageMagick/MagickCore/annotate.h /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h /home/kamil2/Libraries/ImageMagick/MagickCore/geometry.h /home/kamil2/Libraries/ImageMagick/MagickCore/image.h /home/kamil2/Libraries/ImageMagick/MagickCore/blob.h /home/kamil2/Libraries/ImageMagick/MagickCore/stream.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h /home/kamil2/Libraries/ImageMagick/MagickCore/colorspace.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/color.h /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h /home/kamil2/Libraries/ImageMagick/MagickCore/semaphore.h /home/kamil2/Libraries/ImageMagick/MagickCore/composite.h /home/kamil2/Libraries/ImageMagick/MagickCore/compress.h /home/kamil2/Libraries/ImageMagick/MagickCore/effect.h /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h /home/kamil2/Libraries/ImageMagick/MagickCore/layer.h /home/kamil2/Libraries/ImageMagick/MagickCore/locale_.h /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h /home/kamil2/Libraries/ImageMagick/MagickCore/monitor.h /home/kamil2/Libraries/ImageMagick/MagickCore/profile.h /home/kamil2/Libraries/ImageMagick/MagickCore/string_.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantum.h /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h /home/kamil2/Libraries/ImageMagick/MagickCore/resize.h /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h /home/kamil2/Libraries/ImageMagick/MagickCore/type.h /home/kamil2/Libraries/ImageMagick/MagickCore/artifact.h /home/kamil2/Libraries/ImageMagick/MagickCore/attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/channel.h /home/kamil2/Libraries/ImageMagick/MagickCore/cipher.h /home/kamil2/Libraries/ImageMagick/MagickCore/client.h /home/kamil2/Libraries/ImageMagick/MagickCore/coder.h /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h /home/kamil2/Libraries/ImageMagick/MagickCore/configure.h /home/kamil2/Libraries/ImageMagick/MagickCore/constitute.h /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h /home/kamil2/Libraries/ImageMagick/MagickCore/delegate.h /home/kamil2/Libraries/ImageMagick/MagickCore/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h /home/kamil2/Libraries/ImageMagick/MagickCore/display.h /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h /home/kamil2/Libraries/ImageMagick/MagickCore/distribute-cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h /home/kamil2/Libraries/ImageMagick/MagickCore/fx.h /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h /home/kamil2/Libraries/ImageMagick/MagickCore/random_.h /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h /home/kamil2/Libraries/ImageMagick/MagickCore/identify.h /home/kamil2/Libraries/ImageMagick/MagickCore/image-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/list.h /home/kamil2/Libraries/ImageMagick/MagickCore/log.h /home/kamil2/Libraries/ImageMagick/MagickCore/magic.h /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h /home/kamil2/Libraries/ImageMagick/MagickCore/memory_.h /home/kamil2/Libraries/ImageMagick/MagickCore/module.h /home/kamil2/Libraries/ImageMagick/MagickCore/version.h /home/kamil2/Libraries/ImageMagick/MagickCore/mime.h /home/kamil2/Libraries/ImageMagick/MagickCore/montage.h /home/kamil2/Libraries/ImageMagick/MagickCore/opencl.h /home/kamil2/Libraries/ImageMagick/MagickCore/option.h /home/kamil2/Libraries/ImageMagick/MagickCore/paint.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h /home/kamil2/Libraries/ImageMagick/MagickCore/policy.h /home/kamil2/Libraries/ImageMagick/MagickCore/prepress.h /home/kamil2/Libraries/ImageMagick/MagickCore/property.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantize.h /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h /home/kamil2/Libraries/ImageMagick/MagickCore/shear.h /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h /home/kamil2/Libraries/ImageMagick/MagickCore/splay-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/static.h /home/kamil2/Libraries/ImageMagick/MagickCore/statistic.h /home/kamil2/Libraries/ImageMagick/MagickCore/token.h /home/kamil2/Libraries/ImageMagick/MagickCore/transform.h /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h /home/kamil2/Libraries/ImageMagick/MagickCore/vision.h /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/xwindow.h /home/kamil2/Libraries/ImageMagick/MagickWand/MagickWand.h /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h /home/kamil2/Libraries/ImageMagick/MagickWand/compare.h /home/kamil2/Libraries/ImageMagick/MagickWand/composite.h /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/display.h /home/kamil2/Libraries/ImageMagick/MagickWand/drawing-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h /home/kamil2/Libraries/ImageMagick/MagickWand/import.h /home/kamil2/Libraries/ImageMagick/MagickWand/wandcli.h /home/kamil2/Libraries/ImageMagick/MagickWand/operation.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-image.h /home/kamil2/Libraries/ImageMagick/MagickWand/mogrify.h /home/kamil2/Libraries/ImageMagick/MagickWand/montage.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-iterator.h /home/kamil2/Libraries/ImageMagick/MagickWand/stream.h /home/kamil2/Libraries/ImageMagick/MagickWand/wand-view.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Functions.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Blob.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Exception.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/TypeMetric.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Pixels.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/ResourceLimits.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/STL.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h HttpServer/HttpListener/HttpListener.h ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../HttpServer/HttpEndpoint/ScannerEndpoint.h Logic/../HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpProcessor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h main.cpp Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Scanner/ScannerOption.h Scanner/OptionValue.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h ScannerHandler/../Scanner/ScannerOptionDto.h Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Include.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-config.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-baseconfig.h /home/kamil2/Libraries/ImageMagick/MagickCore/MagickCore.h /home/kamil2/Libraries/ImageMagick/MagickCore/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick-type.h /home/kamil2/Libraries/ImageMagick/MagickCore/animate.h /home/kamil2/Libraries/ImageMagick/MagickCore/annotate.h /home/kamil2/Libraries/ImageMagick/MagickCore/draw.h /home/kamil2/Libraries/ImageMagick/MagickCore/geometry.h /home/kamil2/Libraries/ImageMagick/MagickCore/image.h /home/kamil2/Libraries/ImageMagick/MagickCore/blob.h /home/kamil2/Libraries/ImageMagick/MagickCore/stream.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel.h /home/kamil2/Libraries/ImageMagick/MagickCore/colorspace.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/color.h /home/kamil2/Libraries/ImageMagick/MagickCore/exception.h /home/kamil2/Libraries/ImageMagick/MagickCore/semaphore.h /home/kamil2/Libraries/ImageMagick/MagickCore/composite.h /home/kamil2/Libraries/ImageMagick/MagickCore/compress.h /home/kamil2/Libraries/ImageMagick/MagickCore/effect.h /home/kamil2/Libraries/ImageMagick/MagickCore/morphology.h /home/kamil2/Libraries/ImageMagick/MagickCore/layer.h /home/kamil2/Libraries/ImageMagick/MagickCore/locale_.h /home/kamil2/Libraries/ImageMagick/MagickCore/linked-list.h /home/kamil2/Libraries/ImageMagick/MagickCore/monitor.h /home/kamil2/Libraries/ImageMagick/MagickCore/profile.h /home/kamil2/Libraries/ImageMagick/MagickCore/string_.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantum.h /home/kamil2/Libraries/ImageMagick/MagickCore/resample.h /home/kamil2/Libraries/ImageMagick/MagickCore/resize.h /home/kamil2/Libraries/ImageMagick/MagickCore/timer.h /home/kamil2/Libraries/ImageMagick/MagickCore/type.h /home/kamil2/Libraries/ImageMagick/MagickCore/artifact.h /home/kamil2/Libraries/ImageMagick/MagickCore/attribute.h /home/kamil2/Libraries/ImageMagick/MagickCore/cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/channel.h /home/kamil2/Libraries/ImageMagick/MagickCore/cipher.h /home/kamil2/Libraries/ImageMagick/MagickCore/client.h /home/kamil2/Libraries/ImageMagick/MagickCore/coder.h /home/kamil2/Libraries/ImageMagick/MagickCore/colormap.h /home/kamil2/Libraries/ImageMagick/MagickCore/compare.h /home/kamil2/Libraries/ImageMagick/MagickCore/configure.h /home/kamil2/Libraries/ImageMagick/MagickCore/constitute.h /home/kamil2/Libraries/ImageMagick/MagickCore/decorate.h /home/kamil2/Libraries/ImageMagick/MagickCore/delegate.h /home/kamil2/Libraries/ImageMagick/MagickCore/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickCore/magick.h /home/kamil2/Libraries/ImageMagick/MagickCore/display.h /home/kamil2/Libraries/ImageMagick/MagickCore/distort.h /home/kamil2/Libraries/ImageMagick/MagickCore/distribute-cache.h /home/kamil2/Libraries/ImageMagick/MagickCore/enhance.h /home/kamil2/Libraries/ImageMagick/MagickCore/feature.h /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h /home/kamil2/Libraries/ImageMagick/MagickCore/fx.h /home/kamil2/Libraries/ImageMagick/MagickCore/gem.h /home/kamil2/Libraries/ImageMagick/MagickCore/random_.h /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h /home/kamil2/Libraries/ImageMagick/MagickCore/identify.h /home/kamil2/Libraries/ImageMagick/Magic 
+kCore/image-view.h /home/kamil2/Libraries/ImageMagick/MagickCore/list.h /home/kamil2/Libraries/ImageMagick/MagickCore/log.h /home/kamil2/Libraries/ImageMagick/MagickCore/magic.h /home/kamil2/Libraries/ImageMagick/MagickCore/matrix.h /home/kamil2/Libraries/ImageMagick/MagickCore/memory_.h /home/kamil2/Libraries/ImageMagick/MagickCore/module.h /home/kamil2/Libraries/ImageMagick/MagickCore/version.h /home/kamil2/Libraries/ImageMagick/MagickCore/mime.h /home/kamil2/Libraries/ImageMagick/MagickCore/montage.h /home/kamil2/Libraries/ImageMagick/MagickCore/opencl.h /home/kamil2/Libraries/ImageMagick/MagickCore/option.h /home/kamil2/Libraries/ImageMagick/MagickCore/paint.h /home/kamil2/Libraries/ImageMagick/MagickCore/pixel-accessor.h /home/kamil2/Libraries/ImageMagick/MagickCore/policy.h /home/kamil2/Libraries/ImageMagick/MagickCore/prepress.h /home/kamil2/Libraries/ImageMagick/MagickCore/property.h /home/kamil2/Libraries/ImageMagick/MagickCore/quantize.h /home/kamil2/Libraries/ImageMagick/MagickCore/registry.h /home/kamil2/Libraries/ImageMagick/MagickCore/resource_.h /home/kamil2/Libraries/ImageMagick/MagickCore/segment.h /home/kamil2/Libraries/ImageMagick/MagickCore/shear.h /home/kamil2/Libraries/ImageMagick/MagickCore/signature.h /home/kamil2/Libraries/ImageMagick/MagickCore/splay-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/static.h /home/kamil2/Libraries/ImageMagick/MagickCore/statistic.h /home/kamil2/Libraries/ImageMagick/MagickCore/token.h /home/kamil2/Libraries/ImageMagick/MagickCore/transform.h /home/kamil2/Libraries/ImageMagick/MagickCore/threshold.h /home/kamil2/Libraries/ImageMagick/MagickCore/utility.h /home/kamil2/Libraries/ImageMagick/MagickCore/vision.h /home/kamil2/Libraries/ImageMagick/MagickCore/visual-effects.h /home/kamil2/Libraries/ImageMagick/MagickCore/xml-tree.h /home/kamil2/Libraries/ImageMagick/MagickCore/xwindow.h /home/kamil2/Libraries/ImageMagick/MagickWand/MagickWand.h /home/kamil2/Libraries/ImageMagick/MagickWand/method-attribute.h /home/kamil2/Libraries/ImageMagick/MagickWand/animate.h /home/kamil2/Libraries/ImageMagick/MagickWand/compare.h /home/kamil2/Libraries/ImageMagick/MagickWand/composite.h /home/kamil2/Libraries/ImageMagick/MagickWand/conjure.h /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h /home/kamil2/Libraries/ImageMagick/MagickWand/deprecate.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/display.h /home/kamil2/Libraries/ImageMagick/MagickWand/drawing-wand.h /home/kamil2/Libraries/ImageMagick/MagickWand/identify.h /home/kamil2/Libraries/ImageMagick/MagickWand/import.h /home/kamil2/Libraries/ImageMagick/MagickWand/wandcli.h /home/kamil2/Libraries/ImageMagick/MagickWand/operation.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-cli.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-property.h /home/kamil2/Libraries/ImageMagick/MagickWand/magick-image.h /home/kamil2/Libraries/ImageMagick/MagickWand/mogrify.h /home/kamil2/Libraries/ImageMagick/MagickWand/montage.h /home/kamil2/Libraries/ImageMagick/MagickWand/pixel-iterator.h /home/kamil2/Libraries/ImageMagick/MagickWand/stream.h /home/kamil2/Libraries/ImageMagick/MagickWand/wand-view.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Functions.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Blob.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Color.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Drawable.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Geometry.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Exception.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Statistic.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/TypeMetric.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Pixels.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/ResourceLimits.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/STL.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/CoderInfo.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h HttpServer/HttpListener/HttpListener.h ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../HttpServer/HttpEndpoint/ScannerEndpoint.h Logic/../HttpServer/HttpEndpoint/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpProcessor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/HttpMiddleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1125,6 +1235,12 @@ ScannerHandler/../Scanner/ScannerOptionDto.h:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpEndpoint/ScannerEndpoint.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/histogram.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1136,7 +1252,13 @@ ScannerHandler/../Scanner/ScannerOptionDto.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-HttpServer/HttpProcessor/HttpProcessor.o: HttpServer/HttpProcessor/HttpProcessor.cpp HttpServer/HttpProcessor/HttpProcessor.h HttpServer/HttpProcessor/HttpMiddleware.h
+HttpServer/HttpProcessor/HttpProcessor.o: HttpServer/HttpProcessor/HttpProcessor.cpp HttpServer/HttpProcessor/HttpProcessor.h HttpServer/HttpProcessor/HttpMiddleware.h HttpServer/HttpProcessor/../HttpEndpoint/HttpEndpoint.h HttpServer/HttpProcessor/../HttpEndpoint/../HttpProcessor/HttpMiddleware.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1179,7 +1301,20 @@ ScannerHandler/ScannerQueue.o: ScannerHandler/ScannerQueue.cpp ScannerHandler/Sc
 # Not a target:
 main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:30:43.203005699
+#  Last modified 2022-02-11 19:50:48.702238425
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Logic/../HttpServer/HttpEndpoint/ScannerEndpoint.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/ScannerProcessorBuilder.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-11 19:47:47.323561298
 #  File has been updated.
 #  Successfully updated.
 
@@ -1220,6 +1355,7 @@ HttpServer/HttpProcessor/HttpMiddleware.h:
 #  File has not been updated.
 
 # Not a target:
+ 
 /home/kamil2/Libraries/ImageMagick/MagickCore/opencl.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1237,9 +1373,14 @@ HttpServer/HttpProcessor/HttpProcessor.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+HttpServer/HttpEndpoint/HttpEndpoint.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 ScannerHandler/ScannerHandler.o: ScannerHandler/ScannerHandler.cpp
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -1250,12 +1391,19 @@ ScannerHandler/ScannerHandler.o: ScannerHandler/ScannerHandler.cpp
 #  File has not been updated.
 
 # Not a target:
-/home/kamil2/Libraries/ImageMagick/MagickCore/montage.h:
+Logic/ScannerProcessorBuilder.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-HttpServer/HttpListener.o: HttpServer/HttpListener.cpp HttpServer/HttpListener.h HttpServer/HttpSession.h HttpServer/HttpProcessor/HttpProcessor.h HttpServer/HttpProcessor/HttpMiddleware.h
+# Not a target:
+Logic/../ScannerHandler/../Scanner/ScannerOption.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/kamil2/Libraries/ImageMagick/MagickCore/montage.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1281,7 +1429,7 @@ HttpServer/HttpProcessor/HttpProcessor.cpp:
 # Not a target:
 ScannerHandler/ScannerHandler.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-09 22:30:58.899804322
+#  Last modified 2022-02-11 19:47:47.460229479
 #  File has been updated.
 #  Successfully updated.
 
@@ -1315,10 +1463,17 @@ ScannerHandler/ScannerQueue.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+HttpServer/HttpProcessor/../HttpEndpoint/HttpEndpoint.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 HttpServer/HttpProcessor/HttpMiddleware.o: HttpServer/HttpProcessor/HttpMiddleware.cpp HttpServer/HttpProcessor/HttpMiddleware.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/option.h:
@@ -1333,7 +1488,19 @@ ScannerHandler/ScannerManager.cpp:
 #  File has not been updated.
 
 # Not a target:
-HttpServer/HttpListener.h:
+HttpServer/HttpListener/HttpListener.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpListener/HttpSession.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-11 19:48:18.947245159
+#  File has been updated.
+#  Successfully updated.
+
+HttpServer/HttpListener/HttpSession.o: HttpServer/HttpListener/HttpSession.cpp HttpServer/HttpListener/HttpSession.h HttpServer/HttpListener/../HttpProcessor/HttpProcessor.h HttpServer/HttpListener/../HttpProcessor/HttpMiddleware.h HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h HttpServer/HttpListener/../HttpProcessor/../HttpEndpoint/../HttpProcessor/HttpMiddleware.h HttpServer/HttpListener/../HttpProcessor/ProcessorBuilder.h HttpServer/HttpListener/../HttpProcessor/../HttpProcessor/HttpProcessor.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1350,8 +1517,28 @@ Image.o: Image.cpp Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magic
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/HttpListener.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-11 19:50:54.375634644
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpProcessor/../HttpEndpoint/../HttpProcessor/HttpMiddleware.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/display.h:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -1368,7 +1555,19 @@ Image.o: Image.cpp Image.h /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magic
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/HttpListener.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/Magick++/lib/Magick++/Montage.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+HttpServer/HttpListener/../HttpProcessor/../HttpProcessor/HttpProcessor.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1398,6 +1597,12 @@ ScannerHandler/../Scanner/ScannerOption.h:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/HttpSession.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickWand/convert.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1408,14 +1613,6 @@ ScannerHandler/../Scanner/ScannerOption.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-HttpServer/HttpSession.d:
-#  Implicit rule search has been done.
- 
-#  Last modified 2022-02-09 22:46:45.04780262
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 /home/kamil2/Libraries/ImageMagick/MagickCore/fourier.h:
@@ -1430,21 +1627,21 @@ HttpServer/HttpSession.d:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=199/1024=19%, Rehash=0, Collisions=146/990=15%
+# Load=229/1024=22%, Rehash=0, Collisions=177/1076=16%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 2 (0) / strings = 255 / storage = 10231 B / avg = 40 B
-# current buf: size = 8162 B / used = 2124 B / count = 49 / avg = 43 B
-# other used: total = 8107 B / count = 206 / avg = 39 B
-# other free: total = 55 B / max = 55 B / min = 55 B / avg = 55 B
+# strcache buffers: 2 (0) / strings = 304 / storage = 12364 B / avg = 40 B
+# current buf: size = 8162 B / used = 4255 B / count = 85 / avg = 50 B
+# other used: total = 8109 B / count = 219 / avg = 37 B
+# other free: total = 53 B / max = 53 B / min = 53 B / avg = 53 B
 
-# strcache performance: lookups = 901 / hit rate = 71%
+# strcache performance: lookups = 984 / hit rate = 69%
 # hash-table stats:
-# Load=255/8192=3%, Rehash=0, Collisions=22/901=2%
-# Finished Make data base on Wed Feb  9 22:47:04 2022
+# Load=304/8192=4%, Rehash=0, Collisions=21/984=2%
+# Finished Make data base on Sat Feb 12 14:26:51 2022
 
  

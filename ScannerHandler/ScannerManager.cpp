@@ -1,6 +1,7 @@
 #include "ScannerManager.h"
 #include "../Scanner/Scanner.h"
 #include <sane/sane.h>
+#include <iostream>
 
 ScannerManager::ScannerManager(){
     SANE_Int saneVersion = 1;
