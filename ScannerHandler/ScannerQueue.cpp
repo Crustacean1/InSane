@@ -9,7 +9,9 @@ _scannerThread{nullptr},
 _optionCollectionBuffer{nullptr},
 _scannedImage{nullptr},
 _scanningStatus{0,ScanningStatus::Status::Ready}
-{}
+{
+    tryRefreshOptions();
+}
 
 void ScannerQueue::readOptions(){
     size_t optionCount = _scanner->getOptionCount();
@@ -62,8 +64,8 @@ std::vector<ScannerOptionDto> ScannerQueue::getOptions(){
 }
 
 void ScannerQueue::scan(std::unique_ptr<std::unique_lock<std::mutex>> lock){
-    _scannedImage = std::make_unique<PngImage>();
     try{
+        _scannedImage = std::make_unique<PngImage>();
         _scanningStatus.progress = 0;
         _scanningStatus.status = ScanningStatus::Status::Scanning;
         _scanner->scan(*_scannedImage,_scanningStatus.progress);
@@ -83,7 +85,8 @@ bool ScannerQueue::tryScan(){
     }
     _scanningStatus.progress = 0;
     _scanningStatus.status = ScanningStatus::Status::Pending;
-    _scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan,this,std::move(lock));
+    //_scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan,this,std::move(lock));
+    scan(std::move(lock));
     return true;
 }
 
@@ -98,6 +101,7 @@ std::shared_ptr<Image> ScannerQueue::getScanResult(){
 
 ScannerQueue::~ScannerQueue(){
     if(_scannerThread != nullptr){
+        std::cout<<"Come, join us"<<std::endl;
         _scannerThread->join();
     }
 }

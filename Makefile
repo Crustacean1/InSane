@@ -10,6 +10,7 @@ IDIRS = -I/home/kamil2/Libraries/uWebSockets/src\
  -I/home/kamil2/Libraries/jsoncpp/build/include
 CXX = g++
 override LDFLAGS += /home/kamil2/Libraries/uSockets/*.o -lsane -lz -L/home/kamil2/Libraries/ImageMagic/Magick++/lib/.libs/ -lMagick++-7.Q16HDRI -lpthread
+override LDFLAGS += -L/home/kamil2/Libraries/jsoncpp/build/lib -ljsoncpp
 CXXFLAGS = -g -Wall  -std=c++20 -MMD ${IDIRS} -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_HDRI_ENABLE=1
 
 DEPENDS = ${OBJECTS:.o=.d} main.d

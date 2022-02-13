@@ -12,7 +12,6 @@ using namespace KHttp;
 HttpListener::HttpListener(const ProcessorBuilder & procBuilder,boost::asio::io_context & ioc,boost::asio::ip::tcp::endpoint endpoint) : 
 _ioc(ioc), _acceptor(boost::asio::make_strand(_ioc)), _processorBuilder(procBuilder){
     boost::beast::error_code ec;
-    std::cout<<"Hijinks ensue: "<<std::endl;
     _acceptor.open(endpoint.protocol(),ec);
     if(ec){
         throw std::runtime_error("Failed to open acceptor");

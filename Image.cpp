@@ -20,8 +20,8 @@ void Image::setChannelCount(size_t channelCount){_channelCount = channelCount;}
 
 void PngImage::createBuffer(){
     if(_width&&_height&&_channelCount){
+        std::cout<<"creating buffer of size: "<<_buffer.size()<<" "<<_width<<"\t"<<_height<<"\t"<<_channelCount<<std::endl;
         _buffer.reserve(_width*_height*_channelCount);
-        std::cout<<"created buffer of size: "<<_buffer.size()<<" "<<_width<<"\t"<<_height<<"\t"<<_channelCount<<std::endl;
     }
 }
 

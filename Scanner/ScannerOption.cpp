@@ -64,7 +64,7 @@ std::vector<std::string> ScannerOption::getConstraints() const{
 
   switch(getConstraintType()){
     case SANE_CONSTRAINT_NONE:
-      return result;
+      break;
     case SANE_CONSTRAINT_WORD_LIST:
       size = _desc->constraint.word_list[0] + 1;
       for(size_t i = 1;i<size;++i){
@@ -82,6 +82,7 @@ std::vector<std::string> ScannerOption::getConstraints() const{
       result.push_back(_optionValue->get());
       (*static_cast<SANE_Word*>(_optionValue->getBuffer())) = _desc->constraint.range->max;
       result.push_back(_optionValue->get());
+      break;
   }
-  throw std::runtime_error("In: ScannerOption::getConstraints: Unexpected range");
+  return result;
 }

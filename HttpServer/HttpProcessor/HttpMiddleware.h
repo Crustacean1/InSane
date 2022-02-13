@@ -10,7 +10,7 @@ class HttpMiddleware{
     using HttpReq = boost::beast::http::request<boost::beast::http::string_body>;
     using HttpRes = boost::beast::http::response<boost::beast::http::string_body>;
     using HttpMethod = boost::beast::http::verb;
-    using NextFnc = std::function<void(HttpReq&,HttpRes&)>;
+    using NextFnc = std::function<void()>;
 
     virtual void run(HttpReq & req,
     HttpRes & res,
@@ -20,7 +20,7 @@ class HttpMiddleware{
 class HttpDenierMiddleware : public HttpMiddleware{
     std::vector<boost::beast::http::verb> _verbs;
     public:
-    HttpDenierMiddleware(std::vector<boost::beast::http::verb> &allowedMethods) : _verbs{allowedMethods}{}
+    HttpDenierMiddleware(const std::vector<boost::beast::http::verb> &allowedMethods) : _verbs{allowedMethods}{}
     void run(HttpReq & req,HttpRes &res, NextFnc &fnc) override;
 };
 
@@ -29,11 +29,6 @@ class HttpExceptionMiddleware : public HttpMiddleware{
     public:
     HttpExceptionMiddleware(std::ostream & stream) : _logStream(stream){};
     void run(HttpReq & req,HttpRes &res,NextFnc & fnc) override;
-};
-
-template<typename T>
-class ExecutorMiddleware : public HttpMiddleware{
-
 };
 
 #endif /*HTTP_MIDDLEWARE*/

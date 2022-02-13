@@ -43,8 +43,8 @@ void HttpSession::onRead(boost::beast::error_code ec,size_t length){
     }
     std::cout<<"body: "<<_req.body()<<std::endl;
 
-    auto processor = _processorBuilder.build();
-    processor->run(_req,_res);
+    auto processor = _processorBuilder.build(_req,_res);
+    processor->run();
     write();
 }
 

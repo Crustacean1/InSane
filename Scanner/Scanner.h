@@ -25,9 +25,8 @@ class Scanner {
   void initImage(Image &image);
   void restoreState(SANE_Word & word);
 public:
-    static void init();
-    static std::vector<std::string> scanForScanners();
     Scanner(std::string scannerName);
+    Scanner(Scanner&& scanner);
     ~Scanner();
 
     void reloadOptions();

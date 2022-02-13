@@ -11,8 +11,15 @@ Scanner::Scanner(std::string scannerName) {
         throw std::runtime_error("Failed to open device: ~"+std::string(scannerName));
     }
     // Reading options
+    std::cout<<"opened scanner handle: "<<_scannerHandle<<std::endl;
     reloadOptions();
 }
+Scanner::Scanner(Scanner&& scanner) : _scannerHandle(scanner._scannerHandle),
+_params(scanner._params),
+_progress(scanner._progress),
+_options(std::move(scanner._progress))
+{}
+
 Scanner::~Scanner() {
     sane_close(_scannerHandle);
 }
@@ -44,7 +51,12 @@ void Scanner::initImage(Image & image){
 }
 
 void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execption type for json wrapping
-    if(auto error_code = sane_start(_scannerHandle); error_code != SANE_STATUS_GOOD){
+    std::cout<<"Started scanning"<<std::endl;
+    std::cout<<"scanning scanner handle: "<<_scannerHandle<<std::endl;
+    auto error_code = sane_start(_scannerHandle);
+    std::cout<<"Error code obtained"<<std::endl;
+    if(error_code != SANE_STATUS_GOOD){
+        std::cerr<<"Failed to start scanner"<<std::endl;
         switch(error_code){
             case SANE_STATUS_DEVICE_BUSY:
                 throw std::runtime_error("Device busy");
@@ -52,10 +64,15 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
                 throw std::runtime_error("Failed to start scanning: " + std::string(sane_strstatus(error_code)));
         }
     }
+    std::cout<<"Reloading params"<<std::endl;
     reloadParams();
 
+    std::cout<<"Scan params: "<<_params.bytes_per_line<<"\t"<<_params.pixels_per_line<<"\t"<<_params.lines<<"\t"<<_params.format<<"\t"<<_params.depth<<"\t"<<_params.last_frame<<std::endl;
+    std::cout<<"Initating image"<<std::endl;
     initImage(image);
+    std::cout<<"Creating buffer"<<std::endl;
     image.createBuffer();
+    std::cout<<"Buffer created"<<std::endl;
 
     size_t expectedPixels = image.getPixelCount();
     size_t bufferSize = 8096; 
@@ -64,7 +81,6 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
     unsigned char* buffer = new unsigned char[bufferSize];
     SANE_Int bytesRead;
 
-    std::cout<<"Scan params: "<<_params.bytes_per_line<<"\t"<<_params.pixels_per_line<<"\t"<<_params.lines<<"\t"<<_params.format<<"\t"<<_params.depth<<"\t"<<_params.last_frame<<std::endl;
 
     SANE_Status readStatus;
 
@@ -134,22 +150,3 @@ ScannerOptionDto Scanner::getOption(size_t optionNo){
     return result;
 }
 
-std::vector<std::string> Scanner::scanForScanners(){
-    std::vector<std::string> result;
-
-    const SANE_Device ** deviceList;
-    if(auto status = sane_get_devices(&deviceList,(SANE_Bool)0);status != SANE_STATUS_GOOD){
-        throw std::runtime_error("Failed to retrieve device list: " + std::string(sane_strstatus(status)));
-    }
-    for(int i = 0;deviceList[i];++i){
-        result.push_back(std::string(deviceList[i]->name));
-    }
-    return result;
-}
-
-void Scanner::init(){
-    SANE_Int version = 1;
-    if(auto status = sane_init(&version,NULL); status != SANE_STATUS_GOOD){
-        throw std::runtime_error("Failed to initialize sane: " + std::string(sane_strstatus(status)));
-    }
-}
