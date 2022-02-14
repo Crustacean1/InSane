@@ -19,7 +19,9 @@ void ScannerQueue::readOptions(){
 
     for(size_t i =0 ;i<optionCount;++i){
         try{
-            dtoCollection->options.push_back(_scanner->getOption(i));
+            auto option = _scanner->getOption(i);
+            //std::cout<<option.title<<"\t"<<option.value<<std::endl;
+            dtoCollection->options.push_back(option);
         }catch(std::runtime_error &e){
             std::cerr<<e.what()<<"\n"<<std::endl;
         }
@@ -65,10 +67,11 @@ std::vector<ScannerOptionDto> ScannerQueue::getOptions(){
 
 void ScannerQueue::scan(std::unique_ptr<std::unique_lock<std::mutex>> lock){
     try{
-        _scannedImage = std::make_unique<PngImage>();
+        auto newImage = std::make_shared<PngImage>();
         _scanningStatus.progress = 0;
         _scanningStatus.status = ScanningStatus::Status::Scanning;
-        _scanner->scan(*_scannedImage,_scanningStatus.progress);
+        _scanner->scan(*newImage,_scanningStatus.progress);
+        _scannedImage = newImage;
     }catch(std::runtime_error & e){
         _scanningStatus.status = ScanningStatus::Status::Failed;
         std::cerr<<"From ScannerQueue::scan:\n"<<e.what()<<std::endl;
@@ -85,8 +88,7 @@ bool ScannerQueue::tryScan(){
     }
     _scanningStatus.progress = 0;
     _scanningStatus.status = ScanningStatus::Status::Pending;
-    //_scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan,this,std::move(lock));
-    scan(std::move(lock));
+    _scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan,this,std::move(lock));
     return true;
 }
 

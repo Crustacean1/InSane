@@ -28,7 +28,7 @@ void PngImage::createBuffer(){
 void PngImage::read(unsigned char * buffer,size_t size){
     _buffer.insert(_buffer.end(),buffer,buffer +size);
 }
-void PngImage::writeToFile(std::string filename){
+void PngImage::writeToFile(const std::string &filename){
     if(_height == 0){
         _height = _pos/_width;
     }

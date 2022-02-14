@@ -10,18 +10,21 @@ Scanner::Scanner(std::string scannerName) {
     if (sane_open(scannerName.c_str(),&_scannerHandle) != SANE_STATUS_GOOD){
         throw std::runtime_error("Failed to open device: ~"+std::string(scannerName));
     }
-    // Reading options
-    std::cout<<"opened scanner handle: "<<_scannerHandle<<std::endl;
     reloadOptions();
+    reloadParams();
 }
+
 Scanner::Scanner(Scanner&& scanner) : _scannerHandle(scanner._scannerHandle),
 _params(scanner._params),
 _progress(scanner._progress),
 _options(std::move(scanner._progress))
-{}
+{scanner._scannerHandle = nullptr;
+std::cout<<"move performed"<<std::endl;}
 
 Scanner::~Scanner() {
-    sane_close(_scannerHandle);
+    if(_scannerHandle != nullptr){
+        sane_close(_scannerHandle);
+    }
 }
 
 void Scanner::reloadOptions(){
@@ -37,8 +40,8 @@ void Scanner::reloadOptions(){
     }
 }
 void Scanner::reloadParams(){
-    if(auto status = sane_get_parameters(_scannerHandle,&_params);
-    status != SANE_STATUS_GOOD){
+    auto status = sane_get_parameters(_scannerHandle,&_params);
+    if(status != SANE_STATUS_GOOD){
         throw std::runtime_error("Failed to read params from scanner" + 
                                 std::string(sane_strstatus(status)));
     }
@@ -51,28 +54,24 @@ void Scanner::initImage(Image & image){
 }
 
 void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execption type for json wrapping
-    std::cout<<"Started scanning"<<std::endl;
-    std::cout<<"scanning scanner handle: "<<_scannerHandle<<std::endl;
     auto error_code = sane_start(_scannerHandle);
-    std::cout<<"Error code obtained"<<std::endl;
     if(error_code != SANE_STATUS_GOOD){
-        std::cerr<<"Failed to start scanner"<<std::endl;
         switch(error_code){
             case SANE_STATUS_DEVICE_BUSY:
                 throw std::runtime_error("Device busy");
+            case SANE_STATUS_INVAL:
+                std::cerr<<"Invalid options detected"<<std::endl;
             default:
                 throw std::runtime_error("Failed to start scanning: " + std::string(sane_strstatus(error_code)));
         }
     }
-    std::cout<<"Reloading params"<<std::endl;
     reloadParams();
 
     std::cout<<"Scan params: "<<_params.bytes_per_line<<"\t"<<_params.pixels_per_line<<"\t"<<_params.lines<<"\t"<<_params.format<<"\t"<<_params.depth<<"\t"<<_params.last_frame<<std::endl;
-    std::cout<<"Initating image"<<std::endl;
     initImage(image);
-    std::cout<<"Creating buffer"<<std::endl;
+    std::cout<<"image initialized"<<std::endl;
     image.createBuffer();
-    std::cout<<"Buffer created"<<std::endl;
+    std::cout<<"image prepared"<<std::endl;
 
     size_t expectedPixels = image.getPixelCount();
     size_t bufferSize = 8096; 

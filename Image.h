@@ -20,7 +20,7 @@ class Image{
 
     virtual void read(unsigned char * buffer,size_t size) = 0;
     virtual void writeToMemory() = 0;
-    virtual void writeToFile(std::string filename) = 0;
+    virtual void writeToFile(const std::string &filename) = 0;
 
     virtual size_t getImageSize() = 0;
     virtual const void * getImageMemory() = 0;
@@ -35,7 +35,7 @@ class PngImage : public Image{
     void createBuffer() override;
     void read(unsigned char * buffer,size_t size) override;
     void writeToMemory() override;
-    void writeToFile(std::string filepath) override;
+    void writeToFile(const std::string &filepath) override;
     size_t getImageSize() override;
     const void * getImageMemory() override;
 };

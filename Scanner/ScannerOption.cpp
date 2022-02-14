@@ -59,6 +59,9 @@ void ScannerOption::set(std::string newValue, SANE_Word *details) {
 }
 
 std::vector<std::string> ScannerOption::getConstraints() const{
+  if(!SANE_OPTION_IS_ACTIVE(_optionNo)){
+    return std::vector<std::string>{};
+  }
   std::vector<std::string> result;
   size_t size;
 

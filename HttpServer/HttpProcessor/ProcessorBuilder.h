@@ -4,11 +4,13 @@
 #include <memory>
 #include "../HttpProcessor/Processor.h"
 
+class HttpContext;
+
 namespace KHttp{
 
 class ProcessorBuilder{
     public:
-    virtual std::unique_ptr<Processor> build(HttpMiddleware::HttpReq & req,HttpMiddleware::HttpRes & res) const = 0;
+    virtual std::unique_ptr<Processor> build() const = 0;
 };
 }
 

@@ -15,6 +15,7 @@ ScannerManager::ScannerManager(){
 }
 
 ScannerManager::~ScannerManager(){
+    _scannerQueues.clear();
     sane_exit();
 }
 
