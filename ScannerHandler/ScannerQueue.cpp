@@ -5,6 +5,7 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
+#include <mutex>
 
 #include "../Image.h"
 #include "../Scanner/ScannerOptionDto.h"
@@ -25,7 +26,7 @@ ScannerQueue::~ScannerQueue() { _scannerThread->join(); }
 
 bool ScannerQueue::tryRefreshOptions() {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex);
+    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
     if (!lock.owns_lock()) {
         return false;
     }
@@ -37,7 +38,7 @@ bool ScannerQueue::tryRefreshOptions() {
 
 bool ScannerQueue::trySetOption(size_t optionNo, const std::string &value) {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex);
+    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
     if (!lock.owns_lock()) {
         std::cerr << "Couldn't secure lock to try set option" << std::endl;
         return false;
@@ -59,7 +60,7 @@ bool ScannerQueue::trySetOption(size_t optionNo, const std::string &value) {
 
 bool ScannerQueue::tryResetOptions() {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex);
+    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
     if (!lock.owns_lock()) {
         std::cerr << "Couldn't secure lock to reset options" << std::endl;
         return false;
@@ -78,13 +79,13 @@ bool ScannerQueue::tryResetOptions() {
 
 bool ScannerQueue::tryScan() {
     updateTimestamp();
-    std::unique_ptr<std::unique_lock<std::mutex>> lock = std::make_unique<std::unique_lock<std::mutex>>(_scannerMutex);
-    if (!lock->owns_lock()) {
+    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    if (!lock.owns_lock()) {
         return false;
     }
     reserveScanner();
     _scannerThread->join();
-    _scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan, this, std::move(lock));
+    _scannerThread = std::make_unique<std::thread>(&ScannerQueue::scan, this);
     return true;
 }
 
@@ -99,6 +100,7 @@ ScanningStatus ScannerQueue::getScanningStatus() {
 
 std::vector<ScannerOptionDto> ScannerQueue::getOptions() {
     updateTimestamp();
+    reserveScanner();
     return _optionCollectionBuffer->options;
 }
 std::shared_ptr<Image::ImageBuffer> ScannerQueue::getScanResult() {
@@ -108,20 +110,21 @@ std::shared_ptr<Image::ImageBuffer> ScannerQueue::getScanResult() {
 
 bool ScannerQueue::tryReleaseScanner() {
     std::cout << "\t\tTrying to release scanner" << std::endl;
-    std::unique_lock<std::mutex> lock(_scannerMutex);
+    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
     if (!lock.owns_lock()) {
         return false;
     }
-    auto currentTime = std::chrono::milliseconds(std::time(NULL)).count();
+    auto currentTime = std::chrono::seconds(std::time(NULL)).count();
     std::cout << "Time delta: " << (currentTime - _activityTimestamp) << "\t" << _scannerTimeout << std::endl;
     if ((currentTime - _activityTimestamp) > _scannerTimeout) {
         std::cerr << "\t\tReleasing scanner: " << std::endl;
         _scanner = nullptr;
+        return true;
     }
-    return true;
+    return false;
 }
 
-void ScannerQueue::updateTimestamp() { _activityTimestamp = std::chrono::milliseconds(std::time(NULL)).count(); }
+void ScannerQueue::updateTimestamp() { _activityTimestamp = std::chrono::seconds(std::time(NULL)).count(); }
 
 void ScannerQueue::readOptions() {
     size_t optionCount = _scanner->getOptionCount();
@@ -138,8 +141,9 @@ void ScannerQueue::readOptions() {
     _optionCollectionBuffer.swap(dtoCollection);
 }
 
-void ScannerQueue::scan(std::unique_ptr<std::unique_lock<std::mutex>> lock) {
+void ScannerQueue::scan() {
     try {
+        std::lock_guard<std::mutex> lock(_scannerMutex);
         _scanningStatus.progress = 0;
         _scanningStatus.status = ScanningStatus::Status::Scanning;
         PngImage newImage;
@@ -148,7 +152,6 @@ void ScannerQueue::scan(std::unique_ptr<std::unique_lock<std::mutex>> lock) {
     } catch (std::runtime_error &e) {
         _scanningStatus.status = ScanningStatus::Status::Failed;
         std::cerr << "From ScannerQueue::scan:\n" << e.what() << std::endl;
-        return;
     }
 }
 

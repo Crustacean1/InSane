@@ -50,13 +50,13 @@ class ScannerQueue{
     void readScan(Image & image);
     void updateTimestamp();
 
-    void scan(std::unique_ptr<std::unique_lock<std::mutex>> lock);
+    void scan();
 
     ScannerQueue(const ScannerQueue&);
 
     public:
 
-    ScannerQueue(const std::string &scannerName, size_t scannerTimeout = 30000);
+    ScannerQueue(const std::string &scannerName, size_t scannerTimeout = 30);
     ScannerQueue(ScannerQueue&&);
 
     bool tryScan();

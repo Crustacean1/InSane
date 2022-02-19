@@ -49,6 +49,7 @@ void ScannerManager::releaseOldScanners() {
   for (const auto &[key, value] : _scannerQueues) {
     value->tryReleaseScanner();
   }
+  std::cout<<"Oi, wanka, tis be the end"<<std::endl;
 }
 
 ScannerManager::~ScannerManager() {
