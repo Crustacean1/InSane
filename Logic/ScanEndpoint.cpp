@@ -16,7 +16,7 @@ ScanEndpoint::ScanEndpoint(std::shared_ptr<ScannerManager> manager,
     : HttpEndpoint(std::move(parser)), _scannerManager(manager) {}
 
 std::string ScanEndpoint::httpGet(Context & context,const Route & route) {
-    if(route.size() != 1){
+    if(route.size() > 2){
         return not_found(context,ErrorDto{"Invalid get syntax"});
     }
     auto scannerId = route[0];
@@ -49,7 +49,7 @@ std::string ScanEndpoint::httpPost(Context &context,
   if(scanner->tryScan()){
       result["status"] = "success";
   }else{
-      result["status"] = "device_busy";
+      result["status"] = "failure";
   }
   return _parser->serialize(result);
 }

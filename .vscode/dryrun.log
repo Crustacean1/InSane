@@ -1,35 +1,27 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/kamil2/Projects/Vision/Backend'
+make: Entering directory '/home/kamil2/Projects/Vision/Insane'
  
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Image.o Image.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o main.o main.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Logic/ScanEndpoint.o Logic/ScanEndpoint.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Logic/ScanStatusEndpoint.o Logic/ScanStatusEndpoint.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Logic/ScannerEndpoint.o Logic/ScannerEndpoint.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Logic/ScannerProcessorBuilder.o Logic/ScannerProcessorBuilder.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/OptionValue.o Scanner/OptionValue.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/Scanner.o Scanner/Scanner.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/ScannerOption.o Scanner/ScannerOption.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o Scanner/ScannerOptionDto.o Scanner/ScannerOptionDto.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o ScannerHandler/ScannerManager.o ScannerHandler/ScannerManager.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o ScannerHandler/ScannerQueue.o ScannerHandler/ScannerQueue.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/HttpEndpoint.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpEndpoint/JsonParser.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpListener.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpListener/HttpSession.o HttpServer/HttpListener/HttpSession.cpp
+g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpListener/Scheduler.o HttpServer/HttpListener/Scheduler.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/AsciiParser.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Middleware.cpp
- 
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Processor.cpp
 g++ -g -Wall  -std=c++20 -MMD -I/home/kamil2/Libraries/backends/include -I/home/kamil2/Libraries/jsoncpp/build/include   -c -o HttpServer/HttpProcessor/Route.o HttpServer/HttpProcessor/Route.cpp
-g++ -g -std=c++20 -lsane -lz -lpthread -L/home/kamil2/Libraries/jsoncpp/build/lib -ljsoncpp -lpng Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o  -o Backend 
-make: Leaving directory '/home/kamil2/Projects/Vision/Backend'
+g++ -g -std=c++20 -lsane -lz -lpthread -L/home/kamil2/Libraries/jsoncpp/build/lib -ljsoncpp -lpng Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpListener/Scheduler.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o  -o Insane 
+make: Leaving directory '/home/kamil2/Projects/Vision/Insane'
  

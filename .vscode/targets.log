@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Feb 19 11:30:42 2022
+# Make data base, printed on Sat Feb 19 18:33:41 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ NO_AT_BRIDGE = 1
 # environment
 I3SOCK = /run/user/1003/i3/ipc-socket.3870
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-95610203-83e0-4542-b10f-4f046030c842.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1003/vscode-ipc-74f90402-3523-42d6-8dfd-edb4a0d9d301.sock
 # environment
 VSCODE_CWD = /home/kamil2
 # default
@@ -33,7 +33,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/kamil2/Projects/Vision/Backend
+PWD = /home/kamil2/Projects/Vision/Insane
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -61,7 +61,7 @@ XAUTHORITY = /home/kamil2/.Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/kamil2/Projects/Vision/Backend
+CURDIR := /home/kamil2/Projects/Vision/Insane
 # makefile (from 'Makefile', line 11)
 DEPENDS = ${OBJECTS:.o=.d} main.d
 # environment
@@ -81,7 +81,7 @@ XDG_SESSION_DESKTOP = i3
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"Code - OSS","submitURL":"","uploadToServer":false}
 # makefile (from 'main.d', line 1)
-MAKEFILE_LIST := Makefile Image.d main.d Logic/ScanEndpoint.d Logic/ScanStatusEndpoint.d Logic/ScannerEndpoint.d Logic/ScannerProcessorBuilder.d Scanner/OptionValue.d Scanner/Scanner.d Scanner/ScannerOption.d Scanner/ScannerOptionDto.d ScannerHandler/ScannerManager.d ScannerHandler/ScannerQueue.d HttpServer/HttpEndpoint/HttpEndpoint.d HttpServer/HttpEndpoint/JsonParser.d HttpServer/HttpListener/HttpListener.d HttpServer/HttpListener/HttpSession.d HttpServer/HttpProcessor/AsciiParser.d HttpServer/HttpProcessor/Middleware.d HttpServer/HttpProcessor/Processor.d HttpServer/HttpProcessor/Route.d main.d
+MAKEFILE_LIST := Makefile Image.d main.d Logic/ScanEndpoint.d Logic/ScanStatusEndpoint.d Logic/ScannerEndpoint.d Logic/ScannerProcessorBuilder.d Scanner/OptionValue.d Scanner/Scanner.d Scanner/ScannerOption.d Scanner/ScannerOptionDto.d ScannerHandler/ScannerManager.d ScannerHandler/ScannerQueue.d HttpServer/HttpEndpoint/HttpEndpoint.d HttpServer/HttpEndpoint/JsonParser.d HttpServer/HttpListener/HttpListener.d HttpServer/HttpListener/HttpSession.d HttpServer/HttpListener/Scheduler.d HttpServer/HttpProcessor/AsciiParser.d HttpServer/HttpProcessor/Middleware.d HttpServer/HttpProcessor/Processor.d HttpServer/HttpProcessor/Route.d main.d
 # automatic
 @F = $(notdir $@)
 # environment
@@ -145,7 +145,7 @@ DESKTOP_SESSION = i3
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = i3
 # makefile (from 'Makefile', line 2)
-OBJECTS := Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o
+OBJECTS := Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpListener/Scheduler.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -153,7 +153,7 @@ LOGNAME = kamil2
 # environment
 XDG_VTNR = 1
 # makefile
-.DEFAULT_GOAL := Backend
+.DEFAULT_GOAL := Insane
 # environment
 DISPLAY = :0
 # environment
@@ -189,7 +189,7 @@ XDG_SESSION_ID = 2
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 3)
-TARGET := Backend
+TARGET := Insane
 # environment
 VSCODE_CLI = 1
 # environment
@@ -201,11 +201,11 @@ CXXFLAGS = -g -Wall  -std=c++20 -MMD ${IDIRS}
 # makefile (from 'Makefile', line 6)
 CXX = g++
 # makefile (from 'Makefile', line 1)
-SOURCES := Image.cpp main.cpp Logic/ScanEndpoint.cpp Logic/ScanStatusEndpoint.cpp Logic/ScannerEndpoint.cpp Logic/ScannerProcessorBuilder.cpp Scanner/OptionValue.cpp Scanner/Scanner.cpp Scanner/ScannerOption.cpp Scanner/ScannerOptionDto.cpp ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerQueue.cpp HttpServer/HttpEndpoint/HttpEndpoint.cpp HttpServer/HttpEndpoint/JsonParser.cpp HttpServer/HttpListener/HttpListener.cpp HttpServer/HttpListener/HttpSession.cpp HttpServer/HttpProcessor/AsciiParser.cpp HttpServer/HttpProcessor/Middleware.cpp HttpServer/HttpProcessor/Processor.cpp HttpServer/HttpProcessor/Route.cpp
+SOURCES := Image.cpp main.cpp Logic/ScanEndpoint.cpp Logic/ScanStatusEndpoint.cpp Logic/ScannerEndpoint.cpp Logic/ScannerProcessorBuilder.cpp Scanner/OptionValue.cpp Scanner/Scanner.cpp Scanner/ScannerOption.cpp Scanner/ScannerOptionDto.cpp ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerQueue.cpp HttpServer/HttpEndpoint/HttpEndpoint.cpp HttpServer/HttpEndpoint/JsonParser.cpp HttpServer/HttpListener/HttpListener.cpp HttpServer/HttpListener/HttpSession.cpp HttpServer/HttpListener/Scheduler.cpp HttpServer/HttpProcessor/AsciiParser.cpp HttpServer/HttpProcessor/Middleware.cpp HttpServer/HttpProcessor/Processor.cpp HttpServer/HttpProcessor/Route.cpp
 # environment
 DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=96/1024=9%, Rehash=0, Collisions=4/179=2%
+# Load=96/1024=9%, Rehash=0, Collisions=4/181=2%
 
 # Pattern-specific Variable Values
 
@@ -219,10 +219,10 @@ DOTNET_ROOT = /usr/share/dotnet
 # HttpServer (device 2049, inode 23993350): 5 files, no impossibilities.
 # Scanner (device 2049, inode 23993263): 18 files, no impossibilities.
 # . (device 2049, inode 23618226): 19 files, no impossibilities.
-# HttpServer/HttpListener (device 2049, inode 24510898): 11 files, no impossibilities.
+# HttpServer/HttpListener (device 2049, inode 24510898): 15 files, no impossibilities.
 # HttpServer/HttpProcessor (device 2049, inode 23993662): 19 files, no impossibilities.
 
-# 110 files, no impossibilities in 8 directories.
+# 114 files, no impossibilities in 8 directories.
 
 # Implicit Rules
 
@@ -233,21 +233,21 @@ DOTNET_ROOT = /usr/share/dotnet
 # Not a target:
 ScannerHandler/ScannerQueue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:21.122803641
+#  Last modified 2022-02-19 18:09:58.370585768
 #  File has been updated.
 #  Successfully updated.
 
-HttpServer/HttpProcessor/Route.o: HttpServer/HttpProcessor/Route.cpp HttpServer/HttpProcessor/Route.h HttpServer/HttpProcessor/AsciiParser.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Backend: Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o
+Insane: Image.o main.o Logic/ScanEndpoint.o Logic/ScanStatusEndpoint.o Logic/ScannerEndpoint.o Logic/ScannerProcessorBuilder.o Scanner/OptionValue.o Scanner/Scanner.o Scanner/ScannerOption.o Scanner/ScannerOptionDto.o ScannerHandler/ScannerManager.o ScannerHandler/ScannerQueue.o HttpServer/HttpEndpoint/HttpEndpoint.o HttpServer/HttpEndpoint/JsonParser.o HttpServer/HttpListener/HttpListener.o HttpServer/HttpListener/HttpSession.o HttpServer/HttpListener/Scheduler.o HttpServer/HttpProcessor/AsciiParser.o HttpServer/HttpProcessor/Middleware.o HttpServer/HttpProcessor/Processor.o HttpServer/HttpProcessor/Route.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 14):
 	g++ -g -std=c++20 ${LDFLAGS} ${OBJECTS}  -o ${TARGET} 
+
+HttpServer/HttpProcessor/Route.o: HttpServer/HttpProcessor/Route.cpp HttpServer/HttpProcessor/Route.h HttpServer/HttpProcessor/AsciiParser.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 HttpServer/HttpProcessor/Processor.cpp:
@@ -255,7 +255,7 @@ HttpServer/HttpProcessor/Processor.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-Logic/ScanStatusEndpoint.o: Logic/ScanStatusEndpoint.cpp Logic/ScanStatusEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h
+Logic/ScanStatusEndpoint.o: Logic/ScanStatusEndpoint.cpp Logic/ScanStatusEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -269,14 +269,14 @@ Scanner/../Image.h:
 # Not a target:
 ScannerHandler/ScannerManager.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:19.612787049
+#  Last modified 2022-02-19 18:09:56.963902901
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Scanner/ScannerOptionDto.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:24.392839569
+#  Last modified 2022-02-19 18:10:01.517288672
 #  File has been updated.
 #  Successfully updated.
 
@@ -286,7 +286,7 @@ Logic/ScannerProcessorBuilder.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-Logic/ScanEndpoint.o: Logic/ScanEndpoint.cpp Logic/ScanEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../HttpServer/HttpListener/Context.h Logic/../Image.h
+Logic/ScanEndpoint.o: Logic/ScanEndpoint.cpp Logic/ScanEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h Logic/../HttpServer/HttpListener/Context.h Logic/../Image.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -303,7 +303,7 @@ HttpServer/HttpListener/../HttpProcessor/Route.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-ScannerHandler/ScannerManager.o: ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerHandler/../Scanner/ScannerOption.h ScannerHandler/../Scanner/OptionValue.h ScannerHandler/../Scanner/ScannerOptionDto.h
+ScannerHandler/ScannerManager.o: ScannerHandler/ScannerManager.cpp ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerHandler/../Scanner/ScannerOption.h ScannerHandler/../Scanner/OptionValue.h ScannerHandler/../Scanner/ScannerOptionDto.h ScannerHandler/../Image.h ScannerHandler/../HttpServer/HttpListener/Scheduler.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -323,7 +323,7 @@ HttpServer/HttpProcessor/./../HttpProcessor/Route.h:
 # Not a target:
 HttpServer/HttpEndpoint/HttpEndpoint.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:27.812877146
+#  Last modified 2022-02-19 18:10:04.833993534
 #  File has been updated.
 #  Successfully updated.
 
@@ -341,7 +341,6 @@ HttpServer/HttpListener/HttpListener.o: HttpServer/HttpListener/HttpListener.cpp
 # Not a target:
 Logic/../HttpServer/HttpProcessor/Route.h:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -354,7 +353,7 @@ HttpServer/HttpProcessor/Route.cpp:
 # Not a target:
 Scanner/ScannerOption.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:23.676165028
+#  Last modified 2022-02-19 18:10:00.827280725
 #  File has been updated.
 #  Successfully updated.
 
@@ -376,6 +375,7 @@ Logic/ScannerEndpoint.h:
 #  File has not been updated.
 
 # Not a target:
+ 
 HttpServer/HttpListener/../HttpProcessor/Processor.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -387,7 +387,7 @@ Image.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-Logic/ScannerProcessorBuilder.o: Logic/ScannerProcessorBuilder.cpp Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/Middleware.h Logic/ScanEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/ScanStatusEndpoint.h Logic/ScannerEndpoint.h
+Logic/ScannerProcessorBuilder.o: Logic/ScannerProcessorBuilder.cpp Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/Middleware.h Logic/ScanEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/ScanStatusEndpoint.h Logic/ScannerEndpoint.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -431,14 +431,14 @@ HttpServer/HttpProcessor/Processor.h:
 # Not a target:
 Scanner/Scanner.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:22.906156568
+#  Last modified 2022-02-19 18:10:00.060605229
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Scanner/OptionValue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:21.92947917
+#  Last modified 2022-02-19 18:09:59.110594289
 #  File has been updated.
 #  Successfully updated.
 
@@ -509,7 +509,19 @@ Logic/../ScannerHandler/../Scanner/Scanner.h:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/Scheduler.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 HttpServer/HttpProcessor/AsciiParser.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Logic/../ScannerHandler/../Image.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -523,7 +535,7 @@ Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h:
 # Not a target:
 Logic/ScannerEndpoint.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:51:53.847852133
+#  Last modified 2022-02-19 18:09:48.553806049
 #  File has been updated.
 #  Successfully updated.
 
@@ -594,7 +606,7 @@ HttpServer/HttpProcessor/AsciiParser.h:
 # Not a target:
 Logic/ScanEndpoint.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:47:51.915193935
+#  Last modified 2022-02-19 18:09:44.903764015
 #  File has been updated.
 #  Successfully updated.
 
@@ -615,9 +627,8 @@ HttpServer/HttpListener/../HttpProcessor/./../HttpProcessor/Route.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
-Logic/ScannerEndpoint.o: Logic/ScannerEndpoint.cpp Logic/ScannerEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpListener/Context.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h
+Logic/ScannerEndpoint.o: Logic/ScannerEndpoint.cpp Logic/ScannerEndpoint.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpListener/Context.h Logic/../HttpServer/HttpProcessor/Route.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -625,7 +636,7 @@ Logic/ScannerEndpoint.o: Logic/ScannerEndpoint.cpp Logic/ScannerEndpoint.h Logic
 # Not a target:
 Image.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:46:09.510735447
+#  Last modified 2022-02-19 18:09:36.75700353
 #  File has been updated.
 #  Successfully updated.
 
@@ -678,6 +689,12 @@ HttpServer/HttpListener/../HttpProcessor/./Middleware.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+ScannerHandler/../HttpServer/HttpListener/Scheduler.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 HttpServer/HttpProcessor/AsciiParser.o: HttpServer/HttpProcessor/AsciiParser.cpp HttpServer/HttpProcessor/AsciiParser.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -711,6 +728,7 @@ Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 Logic/ScanEndpoint.cpp:
@@ -745,11 +763,11 @@ ScannerHandler/../Scanner/Scanner.h:
 # Not a target:
 HttpServer/HttpProcessor/Processor.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:40.763692462
+#  Last modified 2022-02-19 18:10:32.687647632
 #  File has been updated.
 #  Successfully updated.
 
-main.o: main.cpp HttpServer/HttpListener/HttpListener.h ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerHandler/../Scanner/ScannerOption.h ScannerHandler/../Scanner/OptionValue.h ScannerHandler/../Scanner/ScannerOptionDto.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Image.h HttpServer/HttpProcessor/Route.h HttpServer/HttpProcessor/AsciiParser.h main.cpp HttpServer/HttpListener/HttpListener.h ScannerHandler/ScannerManager.h ScannerHandler/ScannerQueue.h ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h ScannerHandler/../Scanner/ScannerOption.h ScannerHandler/../Scanner/OptionValue.h ScannerHandler/../Scanner/ScannerOptionDto.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h Image.h HttpServer/HttpProcessor/Route.h HttpServer/HttpProcessor/AsciiParser.h
+main.o: main.cpp HttpServer/HttpListener/HttpListener.h HttpServer/HttpProcessor/AsciiParser.h HttpServer/HttpProcessor/Route.h Image.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h ScannerHandler/ScannerManager.h HttpServer/HttpListener/Scheduler.h main.cpp HttpServer/HttpListener/HttpListener.h HttpServer/HttpProcessor/AsciiParser.h HttpServer/HttpProcessor/Route.h Image.h Logic/ScannerProcessorBuilder.h Logic/../ScannerHandler/ScannerManager.h Logic/../ScannerHandler/ScannerQueue.h Logic/../ScannerHandler/../Scanner/Scanner.h /home/kamil2/Libraries/backends/include/sane/sane.h Logic/../ScannerHandler/../Scanner/ScannerOption.h Logic/../ScannerHandler/../Scanner/OptionValue.h Logic/../ScannerHandler/../Scanner/ScannerOptionDto.h Logic/../ScannerHandler/../Image.h Logic/../HttpServer/HttpProcessor/ProcessorBuilder.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Processor.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./Middleware.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/./../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/Route.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/JsonParser.h Logic/../HttpServer/HttpProcessor/../HttpProcessor/../HttpEndpoint/HttpEndpoint.h Logic/../HttpServer/HttpEndpoint/JsonParser.h ScannerHandler/ScannerManager.h HttpServer/HttpListener/Scheduler.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -778,31 +796,36 @@ ScannerHandler/../Scanner/ScannerOptionDto.h:
 #  File has not been updated.
 
 # Not a target:
+HttpServer/HttpListener/Scheduler.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 HttpServer/HttpProcessor/Middleware.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:28.483555555
+#  Last modified 2022-02-19 18:10:29.017605369
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 HttpServer/HttpProcessor/Route.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:41.860371355
+#  Last modified 2022-02-19 18:10:33.764326699
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 HttpServer/HttpProcessor/AsciiParser.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:55:48.393762521
+#  Last modified 2022-02-19 18:10:25.314229387
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Logic/ScanStatusEndpoint.d:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-02-18 22:54:18.416107234
+#  Last modified 2022-02-19 18:09:53.913867776
 #  File has been updated.
 #  Successfully updated.
 
@@ -815,14 +838,14 @@ Logic/../HttpServer/HttpEndpoint/HttpEndpoint.h:
 # Not a target:
 main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:14:45.176406071
+#  Last modified 2022-02-19 18:09:41.113720369
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Logic/ScannerProcessorBuilder.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:08.489999318
+#  Last modified 2022-02-19 18:09:52.720520701
 #  File has been updated.
 #  Successfully updated.
 
@@ -873,6 +896,11 @@ Logic/../ScannerHandler/../Scanner/ScannerOption.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+HttpServer/HttpListener/Scheduler.o: HttpServer/HttpListener/Scheduler.cpp HttpServer/HttpListener/Scheduler.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 ScannerHandler/ScannerQueue.h:
 #  Implicit rule search has not been done.
@@ -882,7 +910,7 @@ ScannerHandler/ScannerQueue.h:
 # Not a target:
 HttpServer/HttpEndpoint/JsonParser.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 22:54:28.809554763
+#  Last modified 2022-02-19 18:10:05.714003669
 #  File has been updated.
 #  Successfully updated.
 
@@ -925,7 +953,7 @@ HttpServer/HttpListener/HttpListener.cpp:
 # Not a target:
 HttpServer/HttpListener/HttpSession.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:23.756836191
+#  Last modified 2022-02-19 18:10:20.210837282
 #  File has been updated.
 #  Successfully updated.
 
@@ -953,7 +981,14 @@ Image.o: Image.cpp Image.h
 # Not a target:
 HttpServer/HttpListener/HttpListener.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 23:15:13.933393338
+#  Last modified 2022-02-19 18:10:10.880729835
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+HttpServer/HttpListener/Scheduler.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-19 18:10:24.664221901
 #  File has been updated.
 #  Successfully updated.
 
@@ -982,6 +1017,7 @@ HttpServer/HttpEndpoint/JsonParser.o: HttpServer/HttpEndpoint/JsonParser.cpp Htt
 
 # Not a target:
 HttpServer/HttpListener/HttpListener.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1011,20 +1047,19 @@ HttpServer/HttpListener/HttpSession.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=129/1024=13%, Rehash=0, Collisions=19/402=5%
+# Load=135/1024=13%, Rehash=0, Collisions=21/423=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 221 / storage = 6014 B / avg = 27 B
-# current buf: size = 8162 B / used = 6014 B / count = 221 / avg = 27 B
+# strcache buffers: 1 (0) / strings = 231 / storage = 6298 B / avg = 27 B
+# current buf: size = 8162 B / used = 6298 B / count = 231 / avg = 27 B
 
-# strcache performance: lookups = 435 / hit rate = 49%
+# strcache performance: lookups = 456 / hit rate = 49%
 # hash-table stats:
-# Load=221/8192=3%, Rehash=0, Collisions=8/435=2%
- 
-# Finished Make data base on Sat Feb 19 11:30:42 2022
+# Load=231/8192=3%, Rehash=0, Collisions=6/456=1%
+# Finished Make data base on Sat Feb 19 18:33:41 2022
 
  
