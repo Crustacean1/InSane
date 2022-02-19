@@ -23,7 +23,7 @@ class JsonParser{
     ~JsonParser();
     Json::Value parse(const std::string & data);
     Json::Value parse(const ScannerOptionDto & dto);
-    Json::Value parse(const HttpEndpoint::ErrorDto & dto);
+    Json::Value parse(const KHttp::HttpEndpoint::ErrorDto & dto);
 
     std::string serialize(const Json::Value &val);
 };

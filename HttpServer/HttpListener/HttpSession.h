@@ -5,7 +5,7 @@
 #include <boost/beast.hpp>
 #include <memory>
 #include "../HttpProcessor/Processor.h"
-#include "HttpContext.h"
+#include "Context.h"
 
 namespace KHttp{
 
@@ -15,7 +15,7 @@ class ProcessorBuilder;
 class HttpSession : public std::enable_shared_from_this<HttpSession>{
     boost::beast::tcp_stream _tcpStream;
     boost::beast::flat_buffer _buffer;
-    HttpContext _context;
+    Context _context;
 
     const ProcessorBuilder & _processorBuilder;
 

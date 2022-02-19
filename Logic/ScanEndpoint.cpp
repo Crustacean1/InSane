@@ -2,37 +2,44 @@
 #include "../HttpServer/HttpProcessor/Route.h"
 #include "../HttpServer/HttpEndpoint/JsonParser.h"
 #include "../ScannerHandler/ScannerManager.h"
+#include "../HttpServer/HttpListener/Context.h"
 #include "../Image.h"
+#include <boost/beast/http/fields.hpp>
+#include <fstream>
+#include <iostream>
+#include <stdio.h>
 
 using namespace KHttp;
 
-ScanEndpoint::ScanEndpoint(ScannerManager &manager,
+ScanEndpoint::ScanEndpoint(std::shared_ptr<ScannerManager> manager,
                            std::unique_ptr<JsonParser> &&parser)
     : HttpEndpoint(std::move(parser)), _scannerManager(manager) {}
 
-std::string ScanEndpoint::httpGet(HttpContext & context,const Route & route) {
+std::string ScanEndpoint::httpGet(Context & context,const Route & route) {
     if(route.size() != 1){
         return not_found(context,ErrorDto{"Invalid get syntax"});
     }
     auto scannerId = route[0];
-    auto scanner = _scannerManager.getScanner(scannerId);
+    auto scanner = _scannerManager->getScanner(scannerId);
     if(scanner == nullptr){
         return not_found(context,ErrorDto{"Scanner not found"});
     }
     auto scan = scanner->getScanResult();
+    context.res.set(boost::beast::http::field::content_type,"image/png");
     if(scan!= nullptr){
-        scan->writeToFile("dummy.png");
+        context.res.set(boost::beast::http::field::content_type,"image/png");
+        return std::string(reinterpret_cast<const char*>(scan->data()),scan->size());
     }
-    //TODO: Add multipart form
     return "";
 }
+
 //TODO: Fix bug preventing scanning more than one time
-std::string ScanEndpoint::httpPost(HttpContext &context,
+std::string ScanEndpoint::httpPost(Context &context,
                                       const Route &route) {
   if (route.size() != 1) {
     return not_found(context, ErrorDto{"Invalid post syntax"});
   }
-  auto scanner = _scannerManager.getScanner(route[0]);
+  auto scanner = _scannerManager->getScanner(route[0]);
   if(scanner == nullptr){
       return not_found(context,ErrorDto{"Scanner not found"});
   }

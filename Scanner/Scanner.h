@@ -16,8 +16,6 @@ class Scanner {
   SANE_Handle _scannerHandle;
   SANE_Parameters _params;
 
-  float _progress;
-
   static constexpr uint32_t CHANNELS[]={4};
   std::vector<std::unique_ptr<ScannerOption>> _options;
 
@@ -38,6 +36,7 @@ public:
 
 
     void setOption(size_t optionNo,std::string value);
+    void resetOptions();
     ScannerOptionDto getOption(size_t optionNo);
 
     void scan(Image &image,size_t & status);

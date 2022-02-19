@@ -73,16 +73,22 @@ void Route::parsePair(const std::string &pair) {
 }
 
 void Route::parsePath(std::string path) {
-  if (path.back() == '/') {
-    path.resize(path.size() - 1);
-  }
+  path.erase(path.begin(), std::find_if(path.begin(), path.end(),
+                                        [](char chr) { return chr != '/'; }));
+  path.erase(std::find_if(path.rbegin(), path.rend(),
+                          [](char chr) { return chr != '/'; })
+                 .base(),
+             path.end());
 
   size_t prev, next;
-  prev = 1;
-  std::string subpath;
-  for (next = path.find("/", prev + 1); next != std::string::npos;
-       next = path.find("/", prev + 1)) {
+  prev = 0;
 
+  std::string subpath;
+  for (next = path.find("/", prev); next != std::string::npos;
+       next = path.find("/", prev)) {
+    if (next == prev + 1) {
+      continue;
+    }
     subpath = path.substr(prev, next - prev);
     AsciiParser::unescapeString(subpath);
     _parsedPath.push_back(subpath);

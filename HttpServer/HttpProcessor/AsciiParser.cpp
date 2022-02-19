@@ -9,13 +9,13 @@ bool AsciiParser::initializeTable(){
         asciiCompliant[i] = 0;
     }
     for(char i = 'A';i<='Z';++i){
-        asciiCompliant[i] = 1;
+        asciiCompliant[static_cast<int>(i)] = 1;
     }
     for(char i = '0';i<='9';++i){
-        asciiCompliant[i] = 1;
+        asciiCompliant[static_cast<int>(i)] = 1;
     }
     for(char i = 'a';i<='z';++i){
-        asciiCompliant[i] = 1;
+        asciiCompliant[static_cast<int>(i)] = 1;
     }
     asciiCompliant['.'] = asciiCompliant[','] = asciiCompliant['-'] = asciiCompliant['_'] = 1;
 }

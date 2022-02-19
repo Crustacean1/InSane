@@ -16,8 +16,7 @@ Scanner::Scanner(std::string scannerName) {
 
 Scanner::Scanner(Scanner&& scanner) : _scannerHandle(scanner._scannerHandle),
 _params(scanner._params),
-_progress(scanner._progress),
-_options(std::move(scanner._progress))
+_options(std::move(scanner._options))
 {scanner._scannerHandle = nullptr;
 std::cout<<"move performed"<<std::endl;}
 
@@ -51,6 +50,7 @@ void Scanner::initImage(Image & image){
     image.setWidth(_params.pixels_per_line);
     image.setHeight(_params.lines);
     image.setChannelCount(_params.format == SANE_FRAME_RGB ? 3 : 1);
+    image.setDepth(_params.depth);
 }
 
 void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execption type for json wrapping
@@ -73,8 +73,8 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
     image.createBuffer();
     std::cout<<"image prepared"<<std::endl;
 
-    size_t expectedPixels = image.getPixelCount();
-    size_t bufferSize = 8096; 
+    size_t expectedPixels = image.getImageSize();
+    size_t bufferSize = 1024; 
     size_t total = 0;
     
     unsigned char* buffer = new unsigned char[bufferSize];
@@ -90,9 +90,9 @@ void Scanner::scan(Image& image,size_t & scanProgress){ // idea: custom execptio
     }
 
     std::cout<<"read: "<<total<<" bytes+"<<bytesRead<<std::endl;
+    image.flushBuffer();
 
     delete[] buffer;
-
     if(readStatus != SANE_STATUS_EOF && readStatus != SANE_STATUS_GOOD){
         std::cout<<readStatus<<std::endl;
         throw std::runtime_error("Failed during read: " + std::string(sane_strstatus(readStatus)));
@@ -142,10 +142,19 @@ void Scanner::setOption(size_t optionNo, std::string value){
 }
 
 ScannerOptionDto Scanner::getOption(size_t optionNo){
-    auto & option = getRawOption(optionNo);
+    const auto & option = getRawOption(optionNo);
     SANE_Word details;
     ScannerOptionDto result(optionNo,option,&details);
     restoreState(details);
     return result;
 }
 
+void Scanner::resetOptions(){
+    for(auto & option : _options){
+        try{
+            option->reset(NULL);
+        }catch(std::runtime_error &e){
+            std::cerr<<e.what()<<std::endl;
+        }
+    }
+}

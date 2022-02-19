@@ -19,8 +19,6 @@ namespace KHttp{
         void parseParams(const std::string & params);
         void parsePair(const std::string & str);
 
-
-        friend int main(int,char**);
         public:
         Route(const std::string &route);
         Route(Route && route);

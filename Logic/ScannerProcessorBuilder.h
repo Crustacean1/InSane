@@ -6,9 +6,9 @@
 #include "../HttpServer/HttpEndpoint/JsonParser.h"
 
 class ScannerProcessorBuilder : public KHttp::ProcessorBuilder{
-    ScannerManager & _scannerManager;
+    std::shared_ptr<ScannerManager> _scannerManager;
     public:
-    ScannerProcessorBuilder(ScannerManager & scannerManager);
+    ScannerProcessorBuilder(std::shared_ptr<ScannerManager> scannerManager);
     std::unique_ptr<KHttp::Processor> build() const override;
 };
 

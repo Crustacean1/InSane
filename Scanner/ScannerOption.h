@@ -35,6 +35,7 @@ class ScannerOption{
 
     std::string get(SANE_Word * details) const;
     void set(std::string param,SANE_Word * details);
+    void reset(SANE_Word * details);
 
     std::vector<std::string> getConstraints() const;
 };

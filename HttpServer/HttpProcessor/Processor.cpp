@@ -1,10 +1,10 @@
 #include "Processor.h"
-#include "../HttpListener/HttpContext.h"
+#include "../HttpListener/Context.h"
 #include <iostream>
 
 using namespace KHttp;
 
-void Processor::run(HttpContext &context) {
+void Processor::run(Context &context) {
   if (_middlewares.size() != 0) {
     _counter = 0;
     _middlewares[0]->run(context, _nextFnc);
@@ -14,7 +14,7 @@ void Processor::run(HttpContext &context) {
 Processor::Processor()
     : _nextFnc(std::bind(&Processor::next, this, std::placeholders::_1)) {}
 
-void Processor::next(HttpContext &context) {
+void Processor::next(Context &context) {
   if (!(_counter < _middlewares.size())) {
     executeEndpoint(context);
     return;
@@ -22,7 +22,8 @@ void Processor::next(HttpContext &context) {
   _middlewares[_counter++]->run(context, _nextFnc);
 }
 
-void Processor::executeEndpoint(HttpContext &context) {
+void Processor::executeEndpoint(Context &context) {
+  std::cout<<"request: "<<context.req.target()<<" with method: "<<context.req.method()<<std::endl;
   Route reqRoute(std::string(context.req.target()));
   size_t maxMatch = 0;
   size_t index = -1;
@@ -44,9 +45,10 @@ void Processor::executeEndpoint(HttpContext &context) {
     context.res.body() = executeMethod(context, routeParams, endpoint);
     return;
   }
+  std::cerr<<"No match for request found"<<std::endl;
   context.res.base().result(boost::beast::http::status::not_found);
 }
-std::string Processor::executeMethod(HttpContext &context, const Route &route,
+std::string Processor::executeMethod(Context &context, const Route &route,
                                      HttpEndpoint &endpoint) {
   context.res.base().result(boost::beast::http::status::ok);
   switch (context.req.method()) {

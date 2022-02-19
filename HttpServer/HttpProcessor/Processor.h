@@ -2,7 +2,7 @@
 #define HTTP_PROCESSOR
 
 #include "../HttpEndpoint/HttpEndpoint.h"
-#include "HttpMiddleware.h"
+#include "./Middleware.h"
 #include "Route.h"
 #include <memory>
 #include <vector>
@@ -13,18 +13,18 @@ class HttpContext;
 namespace KHttp {
 
 class Processor {
-  std::vector<std::unique_ptr<HttpMiddleware>> _middlewares;
+  std::vector<std::unique_ptr<Middleware>> _middlewares;
   std::vector<std::pair<Route, std::unique_ptr<HttpEndpoint>>> _endpoints;
 
   size_t _counter;
-  HttpMiddleware::NextFnc _nextFnc;
+  Middleware::NextFnc _nextFnc;
 
-  void next(HttpContext &context);
+  void next(Context &context);
 
-  using HttpHandler = std::string (HttpEndpoint::*)(HttpContext &,
+  using HttpHandler = std::string (HttpEndpoint::*)(Context &,
                                                     const KHttp::Route &);
-  std::string executeMethod(HttpContext & context,const Route & route, HttpEndpoint & endpoint);
-  void executeEndpoint(HttpContext &context);
+  std::string executeMethod(Context & context,const Route & route, HttpEndpoint & endpoint);
+  void executeEndpoint(Context &context);
 
 public:
   Processor();
@@ -33,7 +33,7 @@ public:
   template <typename E, typename... Args>
   void addEndpoint(const std::string &path, Args... args);
 
-  virtual void run(HttpContext &context);
+  virtual void run(Context &context);
 };
 
 template <typename H, typename... Args>

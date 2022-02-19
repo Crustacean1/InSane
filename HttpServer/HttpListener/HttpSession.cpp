@@ -32,7 +32,6 @@ void HttpSession::run(){
 }
 
 void HttpSession::onRead(boost::beast::error_code ec,size_t length){
-    std::cout<<"Received request of length: "<<length<<std::endl;
     if(ec){
         std::cerr<<"Error during read: "<<ec<<std::endl;
         return;

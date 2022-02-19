@@ -5,12 +5,12 @@
 
 class ScannerManager;
 
-class ScanStatusEndpoint :public HttpEndpoint{
+class ScanStatusEndpoint :public KHttp::HttpEndpoint{
     static const std::string statusNames[];
-    ScannerManager & _scannerManager;
+    std::shared_ptr<ScannerManager> _scannerManager;
     public:
-    ScanStatusEndpoint(ScannerManager & manager,std::unique_ptr<JsonParser> && parser);
-    std::string httpGet(HttpContext & context, const KHttp::Route & route);
+    ScanStatusEndpoint(std::shared_ptr<ScannerManager>  manager,std::unique_ptr<JsonParser> && parser);
+    std::string httpGet(KHttp::Context & context, const KHttp::Route & route);
 };
 
 #endif /*SCANSTATUS_ENDPOINT*/
