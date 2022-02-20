@@ -10,21 +10,6 @@
 
 class ScannerOptionDto;
 
-struct ScanningStatus{
-    static constexpr const char * STATUS_NAMES[] = {"Ready","Initializing","Scanning","Writing","Completed","Failed"};
-    enum class Status : unsigned char{
-        Ready,
-        Initializing,
-        Scanning,
-        Writing,
-        Completed,
-        Failed
-    };
-    size_t progress;
-    Status status;
-    std::string statusToString();
-};
-
 class ScannerQueue{
     std::string _scannerName;
     std::shared_ptr<Scanner> _scanner;

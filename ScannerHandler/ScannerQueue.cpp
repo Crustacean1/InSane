@@ -16,7 +16,7 @@ ScannerQueue::ScannerQueue(const std::string &scannerName, size_t scannerTimeout
       _scannerThread(std::make_shared<std::thread>([]() {})),
       _optionCollectionBuffer(std::make_shared<OptionDtoCollection>()),
       _scanBuffer(std::make_shared<Image::ImageBuffer>()),
-      _scanningStatus{0, ScanningStatus::Status::Ready},
+      _scanningStatus{0, ScanningStatus::State::Ready},
       _scannerTimeout(scannerTimeout),
       _activityTimestamp(std::chrono::system_clock::now().time_since_epoch().count()) {
     tryRefreshOptions();
@@ -26,7 +26,7 @@ ScannerQueue::~ScannerQueue() { _scannerThread->join(); }
 
 bool ScannerQueue::tryRefreshOptions() {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    std::unique_lock<std::mutex> lock(_scannerMutex, std::try_to_lock);
     if (!lock.owns_lock()) {
         return false;
     }
@@ -38,7 +38,7 @@ bool ScannerQueue::tryRefreshOptions() {
 
 bool ScannerQueue::trySetOption(size_t optionNo, const std::string &value) {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    std::unique_lock<std::mutex> lock(_scannerMutex, std::try_to_lock);
     if (!lock.owns_lock()) {
         std::cerr << "Couldn't secure lock to try set option" << std::endl;
         return false;
@@ -60,7 +60,7 @@ bool ScannerQueue::trySetOption(size_t optionNo, const std::string &value) {
 
 bool ScannerQueue::tryResetOptions() {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    std::unique_lock<std::mutex> lock(_scannerMutex, std::try_to_lock);
     if (!lock.owns_lock()) {
         std::cerr << "Couldn't secure lock to reset options" << std::endl;
         return false;
@@ -79,7 +79,7 @@ bool ScannerQueue::tryResetOptions() {
 
 bool ScannerQueue::tryScan() {
     updateTimestamp();
-    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    std::unique_lock<std::mutex> lock(_scannerMutex, std::try_to_lock);
     if (!lock.owns_lock()) {
         return false;
     }
@@ -92,8 +92,8 @@ bool ScannerQueue::tryScan() {
 ScanningStatus ScannerQueue::getScanningStatus() {
     updateTimestamp();
     auto oldState = _scanningStatus;
-    if (_scanningStatus.status == ScanningStatus::Status::Completed) {
-        _scanningStatus.status = ScanningStatus::Status::Ready;
+    if (_scanningStatus.state == ScanningStatus::State::Completed) {
+        _scanningStatus.state = ScanningStatus::State::Ready;
     }
     return oldState;
 }
@@ -109,15 +109,13 @@ std::shared_ptr<Image::ImageBuffer> ScannerQueue::getScanResult() {
 }
 
 bool ScannerQueue::tryReleaseScanner() {
-    std::cout << "\t\tTrying to release scanner" << std::endl;
-    std::unique_lock<std::mutex> lock(_scannerMutex,std::try_to_lock);
+    std::unique_lock<std::mutex> lock(_scannerMutex, std::try_to_lock);
     if (!lock.owns_lock()) {
         return false;
     }
     auto currentTime = std::chrono::seconds(std::time(NULL)).count();
-    std::cout << "Time delta: " << (currentTime - _activityTimestamp) << "\t" << _scannerTimeout << std::endl;
-    if ((currentTime - _activityTimestamp) > _scannerTimeout) {
-        std::cerr << "\t\tReleasing scanner: " << std::endl;
+    if ((currentTime - _activityTimestamp) > _scannerTimeout && _scanner != nullptr) {
+        std::cerr << "\t\tReleasing scanner: " << _scannerName << std::endl;
         _scanner = nullptr;
         return true;
     }
@@ -145,22 +143,22 @@ void ScannerQueue::scan() {
     try {
         std::lock_guard<std::mutex> lock(_scannerMutex);
         _scanningStatus.progress = 0;
-        _scanningStatus.status = ScanningStatus::Status::Scanning;
+        _scanningStatus.state = ScanningStatus::State::Scanning;
         PngImage newImage;
-        _scanner->scan(newImage, _scanningStatus.progress);
+        _scanner->scan(newImage, _scanningStatus);
         readScan(newImage);
     } catch (std::runtime_error &e) {
-        _scanningStatus.status = ScanningStatus::Status::Failed;
+        _scanningStatus.state = ScanningStatus::State::Failed;
         std::cerr << "From ScannerQueue::scan:\n" << e.what() << std::endl;
     }
 }
 
 void ScannerQueue::readScan(Image &image) {
-    _scanningStatus.status = ScanningStatus::Status::Writing;
+    _scanningStatus.state = ScanningStatus::State::Writing;
     auto newBuffer = std::make_shared<Image::ImageBuffer>();
     image.writeToBuffer(*newBuffer);
     _scanBuffer.swap(newBuffer);
-    _scanningStatus.status = ScanningStatus::Status::Completed;
+    _scanningStatus.state = ScanningStatus::State::Completed;
 }
 
 void ScannerQueue::reserveScanner() {
@@ -170,5 +168,3 @@ void ScannerQueue::reserveScanner() {
         readOptions();
     }
 }
-
-std::string ScanningStatus::statusToString() { return std::string(STATUS_NAMES[static_cast<unsigned int>(status)]); }

@@ -32,7 +32,6 @@ ScannerManager::ScannerManager(size_t scannerRefreshRate) : _scannerRefreshRate(
 bool ScannerManager::refreshFunction(std::weak_ptr<ScannerManager> manager){
   
   if(auto exisitingManager = manager.lock()){
-    std::cout<<"Refreshing scanners"<<std::endl;
     exisitingManager->releaseOldScanners();
     return true;
   }
@@ -49,7 +48,6 @@ void ScannerManager::releaseOldScanners() {
   for (const auto &[key, value] : _scannerQueues) {
     value->tryReleaseScanner();
   }
-  std::cout<<"Oi, wanka, tis be the end"<<std::endl;
 }
 
 ScannerManager::~ScannerManager() {

@@ -3,17 +3,19 @@
 #include <thread>
 
 #include "HttpServer/HttpListener/HttpListener.h"
+#include "HttpServer/HttpListener/Scheduler.h"
 #include "HttpServer/HttpProcessor/AsciiParser.h"
 #include "HttpServer/HttpProcessor/Route.h"
 #include "Image.h"
 #include "Logic/ScannerProcessorBuilder.h"
 #include "ScannerHandler/ScannerManager.h"
-#include "HttpServer/HttpListener/Scheduler.h"
 
 int main(int argc, char **argv) {
     try {
-        if(argc != 2){
-          std::cerr<<"Invalid amount of arguments specified, syntacx i ./Insane [ip address of server]"<<std::endl;
+        if (argc != 3) {
+            std::cerr << "Invalid amount of arguments specified, syntacx i ./Insane [ip address of "
+                         "server] [port]"
+                      << std::endl;
         }
         int threadNumber = 1;
         boost::asio::io_context ioc{threadNumber};
@@ -24,7 +26,11 @@ int main(int argc, char **argv) {
 
         ScannerProcessorBuilder builder(scannerManager);
 
-        KHttp::HttpListener server(builder, ioc, boost::asio::ip::tcp::endpoint{boost::asio::ip::make_address(argv[1]), 2138});
+        KHttp::HttpListener server(
+            builder, ioc,
+            boost::asio::ip::tcp::endpoint{
+                boost::asio::ip::make_address(argv[1]),
+                static_cast<boost::asio::ip::port_type>(std::atoi(argv[2]))});
         server.run();
         std::cout << "server started" << std::endl;
         std::vector<std::thread> threads;

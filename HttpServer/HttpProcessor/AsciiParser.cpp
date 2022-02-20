@@ -18,6 +18,7 @@ bool AsciiParser::initializeTable(){
         asciiCompliant[static_cast<int>(i)] = 1;
     }
     asciiCompliant['.'] = asciiCompliant[','] = asciiCompliant['-'] = asciiCompliant['_'] = 1;
+    return false;
 }
 
 void AsciiParser::escapeString(std::string & str){
